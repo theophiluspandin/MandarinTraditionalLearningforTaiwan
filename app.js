@@ -1,0 +1,297 @@
+(() => {
+  const LESSONS = window.LESSONS || [];
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const COLORS = ['#b3402a', '#2f6f8f', '#7a5aa6', '#3d8a5b', '#c07a1a'];
+
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem('ml_' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem('ml_' + k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } }
+  };
+  const prefs = Object.assign({ theme: null, py: true, en: true, zh: true, speed: 1, shadow: false }, store.get('prefs', {}));
+  const done = new Set(store.get('done', []));
+  const save = () => store.set('prefs', prefs);
+  let role = '';
+
+  /* ---------- theme + hints ---------- */
+  function isDark() { return prefs.theme ? prefs.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; }
+  function applyChrome() {
+    document.documentElement.dataset.theme = isDark() ? 'dark' : 'light';
+    $('#t-theme').textContent = isDark() ? '☀ Light mode' : '☾ Dark mode';
+    $('#t-theme').setAttribute('aria-pressed', isDark());
+    const hidden = !prefs.py && !prefs.en;
+    $('#t-hints').textContent = hidden ? 'Show all hints' : 'Hide all hints';
+    $('#t-hints').setAttribute('aria-pressed', hidden);
+    const app = $('#app');
+    app.classList.toggle('hide-py', !prefs.py);
+    app.classList.toggle('hide-en', !prefs.en);
+    app.classList.toggle('hide-zh', !prefs.zh);
+    $$('[data-vis]').forEach(b => b.setAttribute('aria-pressed', prefs[b.dataset.vis]));
+  }
+  $('#t-theme').onclick = () => { prefs.theme = isDark() ? 'light' : 'dark'; save(); applyChrome(); };
+  $('#t-hints').onclick = () => { const hide = prefs.py || prefs.en; prefs.py = prefs.en = !hide; save(); applyChrome(); };
+  document.addEventListener('click', e => {
+    const hint = e.target.closest('.py, .en, .zh');
+    if (hint && $('#app').contains(hint)) hint.classList.add('reveal');
+    const vis = e.target.closest('[data-vis]');
+    if (vis) { prefs[vis.dataset.vis] = !prefs[vis.dataset.vis]; save(); $$('.reveal').forEach(x => x.classList.remove('reveal')); applyChrome(); }
+  });
+
+  /* ---------- audio ---------- */
+  const audio = new Audio();
+  let token = 0, pending = null, uiBusy = null;
+  function playClip(id, muted) {
+    return new Promise(res => {
+      pending = res;
+      audio.muted = !!muted;
+      audio.src = 'audio/' + id + '.mp3';
+      audio.playbackRate = prefs.speed;
+      audio.onended = () => { pending = null; res(true); };
+      audio.onerror = () => { pending = null; res(false); };
+      audio.play().catch(() => { pending = null; res(false); });
+    });
+  }
+  function stopAll() {
+    token++;
+    audio.pause();
+    if (pending) { const r = pending; pending = null; r(false); }
+    $$('.playing, .turn').forEach(x => x.classList.remove('playing', 'turn'));
+    $$('.play.on').forEach(x => x.classList.remove('on'));
+    if (uiBusy) { uiBusy(false); uiBusy = null; }
+  }
+  const status = msg => { const s = $('#status'); if (s) s.textContent = msg || ''; };
+
+  async function playDialogue(L, di, start, one) {
+    stopAll();
+    const my = token, dlg = L.dialogues[di];
+    status('');
+    for (let i = start; i < dlg.lines.length; i++) {
+      const ln = dlg.lines[i], el = $('.line[data-i="' + i + '"]');
+      const mine = role !== '' && String(ln.s) === role;
+      el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      el.classList.add(mine ? 'turn' : 'playing');
+      const ok = await playClip(ln.a, mine);
+      el.classList.remove('turn', 'playing');
+      if (my !== token) return;
+      if (!ok) { status('Audio failed to load. If you opened index.html as a file, serve the folder over http (see README).'); return; }
+      if (one) return;
+      if (prefs.shadow && !mine) {
+        el.classList.add('turn');
+        await playClip(ln.a, true);
+        el.classList.remove('turn');
+        if (my !== token) return;
+      }
+      await sleep(350);
+      if (my !== token) return;
+    }
+    const key = L.n + ':d' + di;
+    done.add(key); store.set('done', Array.from(done));
+    status('Finished ✓');
+  }
+
+  async function playWords(items, rowSel) {
+    stopAll();
+    const my = token;
+    for (let i = 0; i < items.length; i++) {
+      const el = $(rowSel(items[i]));
+      if (!el || el.hidden) continue;
+      el.classList.add('playing');
+      el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      const ok = await playClip(items[i].a);
+      el.classList.remove('playing');
+      if (my !== token || !ok) return;
+      await sleep(500);
+      if (my !== token) return;
+    }
+  }
+
+  /* ---------- views ---------- */
+  const app = $('#app');
+  const visChips = () => `<div class="toolbar" aria-label="Display options">
+    <span style="color:var(--muted);font-size:14px">Show:</span>
+    <button class="chip" data-vis="zh">Chinese</button><button class="chip" data-vis="py">Pinyin</button><button class="chip" data-vis="en">English</button>
+    <span style="color:var(--muted);font-size:13px">Hidden text is blurred — click it to reveal.</span></div>`;
+  const speedSel = () => `<label>Speed <select id="speed">${[0.7, 0.85, 1, 1.2].map(v => `<option value="${v}" ${v === prefs.speed ? 'selected' : ''}>${v}×</option>`).join('')}</select></label>`;
+  function bindSpeed() { const s = $('#speed'); if (s) s.onchange = () => { prefs.speed = +s.value; audio.playbackRate = prefs.speed; save(); }; }
+
+  function home() {
+    document.title = 'Mandarin Study · Lessons 1–7';
+    app.innerHTML = `<h1>Your lessons &amp; materials</h1>
+      <p class="sub">Read the Chinese first. Reveal pinyin and English only when you need them. Every sentence and word has audio, and every dialogue can be played as a whole conversation.</p>
+      <div class="grid">${LESSONS.map(L => {
+        const nd = L.dialogues.length, ok = L.dialogues.filter((_, i) => done.has(L.n + ':d' + i)).length;
+        const nv = L.vocab.reduce((a, g) => a + g.items.length, 0);
+        return `<a class="card" href="#/lesson/${L.n}"><div class="num">Lesson ${L.n}</div><div class="t-zh">${esc(L.zh)}</div>
+          <div class="t-en">${esc(L.en)}</div><div class="meta"><span>${esc(L.topic)}</span><span>${nd} dialogues</span><span>${nv} words</span>
+          <span class="${ok === nd ? 'done' : ''}">${ok}/${nd} listened${ok === nd ? ' ✓' : ''}</span></div></a>`;
+      }).join('')}</div>
+      <h2>Practice</h2>
+      <a class="card" href="#/practice"><div class="t-zh" style="font-size:20px">聽力練習 Listening &amp; flashcards</div>
+      <div class="t-en">Hear a word or sentence and pick the meaning, or drill with flashcards — across all lessons 1–7.</div></a>`;
+    applyChrome();
+  }
+
+  function lessonPage(n, tab) {
+    const L = LESSONS.find(l => l.n === n);
+    if (!L) return home();
+    document.title = `Lesson ${n} · ${L.en}`;
+    const tabs = [].concat(L.dialogues.map((d, i) => ['d' + (i + 1), d.title]), L.vocab.map((v, i) => ['v' + (i + 1), v.title]), [['practice', 'Practice']]);
+    if (!tabs.some(t => t[0] === tab)) tab = 'd1';
+    app.innerHTML = `<div class="crumbs"><a href="#/">← All lessons</a></div>
+      <h1><span class="zh">${esc(L.zh)}</span></h1><p class="sub">Lesson ${n} · ${esc(L.en)} · ${esc(L.topic)}</p>
+      <nav class="tabs">${tabs.map(t => `<a class="tab ${t[0] === tab ? 'on' : ''}" href="#/lesson/${n}/${t[0]}">${esc(t[1])}</a>`).join('')}</nav>
+      <div id="body"></div>`;
+    const body = $('#body');
+    if (tab[0] === 'd') dialogueView(body, L, +tab.slice(1) - 1);
+    else if (tab[0] === 'v') vocabView(body, L, +tab.slice(1) - 1);
+    else practiceView(body, n);
+    applyChrome();
+  }
+
+  function dialogueView(body, L, di) {
+    const dlg = L.dialogues[di];
+    const order = [];
+    dlg.lines.forEach(l => { if (!order.includes(l.s)) order.push(l.s); });
+    if (!order.map(String).includes(role)) role = '';
+    body.innerHTML = `<div class="toolbar">
+        <button class="btn" id="playAll">▶ Play whole conversation</button><button class="btn ghost" id="stop">■ Stop</button>
+        ${speedSel()}
+        <label>Role-play <select id="role"><option value="">Just listen</option>${order.map(s => `<option value="${s}" ${String(s) === role ? 'selected' : ''}>I am ${esc(L.speakers[s].zh)}</option>`).join('')}</select></label>
+        <label><input type="checkbox" id="shadow" ${prefs.shadow ? 'checked' : ''}> Pause to repeat after each line</label>
+        <span class="sp"></span><a class="chip" href="audio/${dlg.full}" download="Lesson${L.n}-${esc(dlg.title)}.mp3" style="text-decoration:none">⬇ mp3</a></div>
+      ${visChips()}
+      <div id="status" class="sub" role="status"></div>
+      <ol class="lines">${dlg.lines.map((ln, i) => {
+        const sp = L.speakers[ln.s], right = order.indexOf(ln.s) > 0;
+        return `<li class="line ${right ? 'r' : ''}" data-i="${i}"><div class="avatar" style="background:${COLORS[ln.s % COLORS.length]}">${esc(sp.zh[0])}</div>
+          <div class="bubble"><div class="spk">${esc(sp.zh)} · ${esc(sp.py)}</div><div class="bubble-row"><div>
+          <div class="zh">${esc(ln.zh)}</div><div class="py">${esc(ln.py)}</div><div class="en">${esc(ln.en)}</div></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><button class="play" data-one="${i}" title="Play this sentence" aria-label="Play sentence ${i + 1}">▶</button>
+          <button class="play" data-from="${i}" title="Play from here" aria-label="Play from sentence ${i + 1}">⏭</button></div></div></div></li>`;
+      }).join('')}</ol>`;
+    bindSpeed();
+    $('#playAll').onclick = () => playDialogue(L, di, 0, false);
+    $('#stop').onclick = () => { stopAll(); status(''); };
+    $('#role').onchange = e => { role = e.target.value; };
+    $('#shadow').onchange = e => { prefs.shadow = e.target.checked; save(); };
+    body.onclick = e => {
+      const b = e.target.closest('.play'); if (!b) return;
+      if (b.dataset.one != null) playDialogue(L, di, +b.dataset.one, true);
+      else playDialogue(L, di, +b.dataset.from, false);
+    };
+  }
+
+  function vocabView(body, L, vi) {
+    const grp = L.vocab[vi];
+    body.innerHTML = `<div class="toolbar"><button class="btn" id="playAll">▶ Play all words</button><button class="btn ghost" id="stop">■ Stop</button>
+        ${speedSel()}<span class="sp"></span><input class="search" id="q" type="search" placeholder="Filter (Chinese, pinyin, English)"></div>
+      ${visChips()}
+      <div class="vlist">${grp.items.map((it, i) => `<div class="v" data-i="${i}" data-s="${esc((it.zh + ' ' + it.py + ' ' + it.en).toLowerCase())}">
+        <button class="play" data-one="${i}" title="Play" aria-label="Play ${esc(it.zh)}">▶</button><div class="zh">${esc(it.zh)}</div>
+        <div class="mid"><div class="py">${esc(it.py)}<span class="pos">${esc(it.pos)}</span></div><div class="en">${esc(it.en)}</div></div></div>`).join('')}</div>`;
+    bindSpeed();
+    const rowSel = it => '.v[data-i="' + grp.items.indexOf(it) + '"]';
+    $('#playAll').onclick = () => playWords(grp.items, rowSel);
+    $('#stop').onclick = stopAll;
+    $('#q').oninput = e => { const q = e.target.value.trim().toLowerCase(); $$('.v').forEach(r => { r.hidden = q && !r.dataset.s.includes(q); }); };
+    body.onclick = async e => {
+      const b = e.target.closest('.play'); if (!b) return;
+      stopAll();
+      const my = token, row = b.closest('.v');
+      row.classList.add('playing');
+      await playClip(grp.items[+b.dataset.one].a);
+      if (my === token) row.classList.remove('playing');
+    };
+  }
+
+  /* ---------- practice ---------- */
+  function pools(scope) {
+    const ls = scope === 'all' ? LESSONS : LESSONS.filter(l => l.n === +scope);
+    const seen = new Set(), words = [], sents = [];
+    ls.forEach(L => {
+      L.vocab.forEach(g => g.items.forEach(it => { if (!seen.has(it.zh)) { seen.add(it.zh); words.push(it); } }));
+      L.dialogues.forEach(d => d.lines.forEach(l => sents.push(l)));
+    });
+    return { words, sents };
+  }
+  const MODES = {
+    'listen-en': 'Hear a word → pick the meaning',
+    'listen-zh': 'Hear a word → pick the characters',
+    'en-zh': 'See the meaning → pick the characters',
+    'sentence': 'Hear a sentence → pick the translation',
+    'cards': 'Flashcards (Chinese → reveal)'
+  };
+
+  function practiceView(body, n) {
+    const scopeVal = n ? String(n) : 'all';
+    body.innerHTML = `<div class="toolbar"><label>Mode <select id="mode">${Object.entries(MODES).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
+        <label>Material <select id="scope"><option value="${n || ''}" ${n ? 'selected' : 'hidden'}>Lesson ${n}</option><option value="all" ${n ? '' : 'selected'}>All lessons 1–7</option></select></label>
+        ${speedSel()}<button class="btn" id="go">Start</button></div><div id="quiz"></div>`;
+    bindSpeed();
+    $('#go').onclick = () => startQuiz($('#mode').value, $('#scope').value || 'all');
+  }
+
+  function startQuiz(mode, scope) {
+    stopAll();
+    const quiz = $('#quiz'), { words, sents } = pools(scope);
+    let score = 0, total = 0, deck = shuffle(words), cur = null;
+    if (mode === 'cards') return card();
+    ask();
+
+    function ask() {
+      const pool = mode === 'sentence' ? sents : words;
+      cur = pool[Math.floor(Math.random() * pool.length)];
+      const field = mode === 'listen-en' ? 'en' : mode === 'sentence' ? 'en' : 'zh';
+      const others = shuffle(pool.filter(x => x[field] !== cur[field])).filter((x, i, a) => a.findIndex(y => y[field] === x[field]) === i).slice(0, 3);
+      const opts = shuffle([cur].concat(others));
+      const prompt = mode === 'en-zh' ? `<div class="q-prompt small">${esc(cur.en)}</div>` : `<div class="center"><button class="btn" id="again">🔊 Play again</button></div>`;
+      quiz.innerHTML = `<div class="panel">${prompt}<div class="opts" style="margin-top:14px">${opts.map((o, i) =>
+        `<button class="opt ${field === 'zh' ? 'zh' : ''}" data-i="${i}">${esc(o[field])}</button>`).join('')}</div>
+        <div class="score">Score ${score} / ${total}</div><div class="center" style="margin-top:10px"><button class="btn ghost" id="next" hidden>Next →</button></div></div>`;
+      if (mode !== 'en-zh') { stopAll(); playClip(cur.a); $('#again').onclick = () => { stopAll(); playClip(cur.a); }; }
+      $$('.opt', quiz).forEach(b => b.onclick = () => {
+        const pick = opts[+b.dataset.i], good = pick === cur || pick[field] === cur[field];
+        total++; if (good) score++;
+        $$('.opt', quiz).forEach((x, i) => { x.disabled = true; if (opts[i][field] === cur[field]) x.classList.add('ok'); });
+        if (!good) b.classList.add('bad');
+        if (mode === 'en-zh') { stopAll(); playClip(cur.a); }
+        $('.score', quiz).textContent = `Score ${score} / ${total}` + (mode === 'sentence' || mode === 'listen-zh' ? ` · ${cur.zh}${cur.py ? ' (' + cur.py + ')' : ''}` : ` · ${cur.zh} ${cur.py}`);
+        $('#next').hidden = false; $('#next').onclick = ask; $('#next').focus();
+      });
+    }
+
+    function card() {
+      if (!deck.length) { quiz.innerHTML = `<div class="panel center"><h2 style="margin-top:0">All done 🎉</h2><button class="btn" id="again2">Start over</button></div>`; $('#again2').onclick = () => startQuiz(mode, scope); return; }
+      cur = deck[0];
+      quiz.innerHTML = `<div class="panel"><div class="fc" id="fc"><div><div class="zh">${esc(cur.zh)}</div><div class="sub" style="margin-top:12px">Tap to reveal</div></div></div>
+        <div class="score">${deck.length} cards left</div></div>`;
+      $('#fc').onclick = () => {
+        $('#fc').innerHTML = `<div><div class="zh">${esc(cur.zh)}</div><div class="py" style="font-size:20px">${esc(cur.py)}</div><div style="font-size:18px;margin-top:6px">${esc(cur.en)}</div>
+          <div style="margin-top:16px;display:flex;gap:10px;justify-content:center"><button class="btn ghost" id="again3">↻ Again</button><button class="btn" id="got">✓ Got it</button></div></div>`;
+        stopAll(); playClip(cur.a);
+        $('#again3').onclick = e => { e.stopPropagation(); deck.push(deck.shift()); card(); };
+        $('#got').onclick = e => { e.stopPropagation(); deck.shift(); card(); };
+        $('#fc').onclick = null;
+      };
+    }
+  }
+
+  /* ---------- router ---------- */
+  function route() {
+    stopAll();
+    const p = location.hash.replace(/^#\/?/, '').split('/');
+    if (p[0] === 'lesson') lessonPage(+p[1], p[2] || 'd1');
+    else if (p[0] === 'practice') {
+      document.title = 'Practice · Mandarin Study';
+      app.innerHTML = `<div class="crumbs"><a href="#/">← All lessons</a></div><h1>Practice</h1><div id="body"></div>`;
+      practiceView($('#body'), 0); applyChrome();
+    } else home();
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', route);
+  applyChrome();
+  route();
+})();
