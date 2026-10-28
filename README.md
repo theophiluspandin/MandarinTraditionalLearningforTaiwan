@@ -8,6 +8,9 @@ listening practice and flashcards. No build step is needed to host it.
 - **Whole-conversation playback** with line highlighting, speed control (0.7×–1.2×),
   a downloadable mp3 of each dialogue, role-play mode (your lines are silent so you can speak them)
   and "pause to repeat" shadowing.
+- **Conversation training (會話練習)** for every lesson: the teacher voice asks a question, you answer aloud
+  during a timed pause, then a model answer plays. All questions and answers have pinyin, English and audio,
+  plus a downloadable mp3 per set. Questions live in `../work/data/questions.txt`.
 - Chinese / pinyin / English can each be hidden (blurred) and revealed on click; "Hide all hints" in the header.
 - Listening quizzes, meaning → characters quiz, sentence-translation quiz and flashcards.
 - Dark mode; progress ("listened") is kept in your browser's localStorage.

@@ -445,7 +445,127 @@ window.LESSONS = [
   "n": 1,
   "zh": "歡迎你來臺灣！",
   "en": "Welcome to Taiwan!",
-  "topic": "Introducing Myself"
+  "topic": "Introducing Myself",
+  "speak": [
+   {
+    "title": "會話練習 Speaking practice",
+    "items": [
+     {
+      "q": {
+       "zh": "你好！請問你姓什麼？叫什麼？",
+       "en": "Hello! May I ask your surname and your first name?",
+       "py": "Nǐ hǎo! Qǐngwèn nǐ xìng shénme? Jiào shénme?",
+       "a": "e000497d5446"
+      },
+      "ans": {
+       "zh": "我姓王，叫開文。",
+       "en": "My surname is Wang. My first name is Kaiwen.",
+       "py": "Wǒ xìng Wáng, jiào Kāiwén.",
+       "a": "32c34cc67da6"
+      }
+     },
+     {
+      "q": {
+       "zh": "你是哪國人？",
+       "en": "Which country are you from?",
+       "py": "Nǐ shì nǎ guó rén?",
+       "a": "78e7916809c1"
+      },
+      "ans": {
+       "zh": "我是美國人。",
+       "en": "I am American.",
+       "py": "Wǒ shì Měiguó rén.",
+       "a": "1205af915046"
+      }
+     },
+     {
+      "q": {
+       "zh": "你是臺灣人嗎？",
+       "en": "Are you Taiwanese?",
+       "py": "Nǐ shì Táiwān rén ma?",
+       "a": "5256fbd03d09"
+      },
+      "ans": {
+       "zh": "我不是臺灣人，我是日本人。",
+       "en": "I'm not Taiwanese, I'm Japanese.",
+       "py": "Wǒ bú shì Táiwān rén, wǒ shì Rìběn rén.",
+       "a": "4e3bdd0747c6"
+      }
+     },
+     {
+      "q": {
+       "zh": "王先生是日本人嗎？",
+       "en": "Is Mr. Wang Japanese?",
+       "py": "Wáng Xiānshēng shì Rìběn rén ma?",
+       "a": "b588958daf4d"
+      },
+      "ans": {
+       "zh": "他不是日本人，他是美國人。",
+       "en": "He is not Japanese, he is American.",
+       "py": "Tā bú shì Rìběn rén, tā shì Měiguó rén.",
+       "a": "fd9852e62c4f"
+      }
+     },
+     {
+      "q": {
+       "zh": "你喜歡喝茶嗎？",
+       "en": "Do you like to drink tea?",
+       "py": "Nǐ xǐhuān hē chá ma?",
+       "a": "a3a9b8b26735"
+      },
+      "ans": {
+       "zh": "我很喜歡喝茶。",
+       "en": "I like drinking tea very much.",
+       "py": "Wǒ hěn xǐhuān hē chá.",
+       "a": "54fe309e1ba4"
+      }
+     },
+     {
+      "q": {
+       "zh": "你喜歡喝什麼茶？",
+       "en": "What kind of tea do you like?",
+       "py": "Nǐ xǐhuān hē shénme chá?",
+       "a": "bc4e00525c80"
+      },
+      "ans": {
+       "zh": "我喜歡喝烏龍茶。",
+       "en": "I like Oolong tea.",
+       "py": "Wǒ xǐhuān hē Wūlóng chá.",
+       "a": "c4ba11e2f805"
+      }
+     },
+     {
+      "q": {
+       "zh": "你要不要喝咖啡？",
+       "en": "Would you like some coffee?",
+       "py": "Nǐ yào bú yào hē kāfēi?",
+       "a": "cdd18ce5d263"
+      },
+      "ans": {
+       "zh": "謝謝，我不喝咖啡，我喜歡喝茶。",
+       "en": "Thanks, I don't drink coffee. I like tea.",
+       "py": "Xièxie, wǒ bù hē kāfēi, wǒ xǐhuān hē chá.",
+       "a": "472a9e95e9ba"
+      }
+     },
+     {
+      "q": {
+       "zh": "臺灣人喜歡喝什麼？",
+       "en": "What do Taiwanese people like to drink?",
+       "py": "Táiwān rén xǐhuān hē shénme?",
+       "a": "584fb3aafe42"
+      },
+      "ans": {
+       "zh": "臺灣人喜歡喝茶。",
+       "en": "Taiwanese people like to drink tea.",
+       "py": "Táiwān rén xǐhuān hē chá.",
+       "a": "15b0dbfbc1a4"
+      }
+     }
+    ],
+    "full": "speak_L1_1.mp3"
+   }
+  ]
  },
  {
   "speakers": [
@@ -882,7 +1002,127 @@ window.LESSONS = [
   "n": 2,
   "zh": "我的家人",
   "en": "My Family",
-  "topic": "Family Members"
+  "topic": "Family Members",
+  "speak": [
+   {
+    "title": "會話練習 Speaking practice",
+    "items": [
+     {
+      "q": {
+       "zh": "你叫什麼名字？",
+       "en": "What is your name?",
+       "py": "Nǐ jiào shénme míngzi?",
+       "a": "90e2e45f84a9"
+      },
+      "ans": {
+       "zh": "我叫王開文。",
+       "en": "My name is Wang Kaiwen.",
+       "py": "Wǒ jiào Wáng Kāiwén.",
+       "a": "f11fe54d5781"
+      }
+     },
+     {
+      "q": {
+       "zh": "你家有幾個人？",
+       "en": "How many people are there in your family?",
+       "py": "Nǐ jiā yǒu jǐge rén?",
+       "a": "096c3e8e33a8"
+      },
+      "ans": {
+       "zh": "我家有五個人。",
+       "en": "There are five people in my family.",
+       "py": "Wǒ jiā yǒu wǔge rén.",
+       "a": "81a20a37efd6"
+      }
+     },
+     {
+      "q": {
+       "zh": "你有沒有兄弟姐妹？",
+       "en": "Do you have any brothers or sisters?",
+       "py": "Nǐ yǒu méi yǒu xiōngdì jiěmèi?",
+       "a": "53c1776d79f8"
+      },
+      "ans": {
+       "zh": "有，我有一個哥哥、兩個妹妹。",
+       "en": "Yes, I have an older brother and two younger sisters.",
+       "py": "Yǒu, wǒ yǒu yí ge gēge, liǎngge mèimei.",
+       "a": "efaace387371"
+      }
+     },
+     {
+      "q": {
+       "zh": "你家人喜歡照相嗎？",
+       "en": "Does your family like taking photos?",
+       "py": "Nǐ jiārén xǐhuān zhàoxiàng ma?",
+       "a": "f9ddc0d43f3b"
+      },
+      "ans": {
+       "zh": "我家人都很喜歡照相。",
+       "en": "Everyone in my family likes taking photos.",
+       "py": "Wǒ jiārén dōu hěn xǐhuān zhàoxiàng.",
+       "a": "855515351f37"
+      }
+     },
+     {
+      "q": {
+       "zh": "你家有很多書嗎？都是誰的書？",
+       "en": "Are there many books in your home? Whose books are they?",
+       "py": "Nǐ jiā yǒu hěn duō shū ma? Dōu shì shéi de shū?",
+       "a": "81e0db0c0a1f"
+      },
+      "ans": {
+       "zh": "我家有很多書，都是我爸爸的書。",
+       "en": "There are many books in my home. They're all my dad's.",
+       "py": "Wǒ jiā yǒu hěn duō shū, dōu shì wǒ bàba de shū.",
+       "a": "4135cecf4b38"
+      }
+     },
+     {
+      "q": {
+       "zh": "你喜歡看書嗎？",
+       "en": "Do you like reading?",
+       "py": "Nǐ xǐhuān kànshū ma?",
+       "a": "48976ef2f268"
+      },
+      "ans": {
+       "zh": "我很喜歡看書。",
+       "en": "I like reading very much.",
+       "py": "Wǒ hěn xǐhuān kànshū.",
+       "a": "4a643d17be56"
+      }
+     },
+     {
+      "q": {
+       "zh": "你的老師是哪國人？",
+       "en": "Which country is your teacher from?",
+       "py": "Nǐ de lǎoshī shì nǎ guó rén?",
+       "a": "979a32db225d"
+      },
+      "ans": {
+       "zh": "我的老師是臺灣人。",
+       "en": "My teacher is Taiwanese.",
+       "py": "Wǒ de lǎoshī shì Táiwān rén.",
+       "a": "10d021c1ead1"
+      }
+     },
+     {
+      "q": {
+       "zh": "你家漂亮嗎？有很多照片嗎？",
+       "en": "Is your home pretty? Does it have many photos?",
+       "py": "Nǐ jiā piàoliàng ma? Yǒu hěn duō zhàopiàn ma?",
+       "a": "3adc870c65d3"
+      },
+      "ans": {
+       "zh": "我家很漂亮，有很多照片。",
+       "en": "My home is pretty, and it has a lot of photos.",
+       "py": "Wǒ jiā hěn piàoliàng, yǒu hěn duō zhàopiàn.",
+       "a": "cc84b0b49c64"
+      }
+     }
+    ],
+    "full": "speak_L2_1.mp3"
+   }
+  ]
  },
  {
   "speakers": [
@@ -1349,7 +1589,127 @@ window.LESSONS = [
   "n": 3,
   "zh": "週末做什麼？",
   "en": "What Are You Doing Over the Weekend?",
-  "topic": "Hobbies"
+  "topic": "Hobbies",
+  "speak": [
+   {
+    "title": "會話練習 Speaking practice",
+    "items": [
+     {
+      "q": {
+       "zh": "你喜歡聽音樂嗎？",
+       "en": "Do you like listening to music?",
+       "py": "Nǐ xǐhuān tīng yīnyuè ma?",
+       "a": "af653fe106bd"
+      },
+      "ans": {
+       "zh": "我很喜歡聽音樂，也喜歡運動。",
+       "en": "I really like listening to music, and I also like sports.",
+       "py": "Wǒ hěn xǐhuān tīng yīnyuè, yě xǐhuān yùndòng.",
+       "a": "619fb06f2758"
+      }
+     },
+     {
+      "q": {
+       "zh": "你喜歡做什麼運動？",
+       "en": "What sports do you like to do?",
+       "py": "Nǐ xǐhuān zuò shénme yùndòng?",
+       "a": "e5915d2f9ca7"
+      },
+      "ans": {
+       "zh": "我喜歡打籃球和游泳。",
+       "en": "I like playing basketball and swimming.",
+       "py": "Wǒ xǐhuān dǎ lánqiú hàn yóuyǒng.",
+       "a": "474af2487d41"
+      }
+     },
+     {
+      "q": {
+       "zh": "你常打網球嗎？",
+       "en": "Do you often play tennis?",
+       "py": "Nǐ cháng dǎ wǎngqiú ma?",
+       "a": "77210a2ed599"
+      },
+      "ans": {
+       "zh": "我不常打網球，我常踢足球。",
+       "en": "I don't often play tennis. I often play soccer.",
+       "py": "Wǒ bù cháng dǎ wǎngqiú, wǒ cháng tī zúqiú.",
+       "a": "b06f42fb780b"
+      }
+     },
+     {
+      "q": {
+       "zh": "你覺得打棒球好玩嗎？",
+       "en": "Do you think playing baseball is fun?",
+       "py": "Nǐ juéde dǎ bàngqiú hǎowán ma?",
+       "a": "642d9e02a795"
+      },
+      "ans": {
+       "zh": "我覺得打棒球很好玩。",
+       "en": "I think playing baseball is a lot of fun.",
+       "py": "Wǒ juéde dǎ bàngqiú hěn hǎowán.",
+       "a": "2137a87eee1a"
+      }
+     },
+     {
+      "q": {
+       "zh": "週末你想做什麼？",
+       "en": "What do you want to do on the weekend?",
+       "py": "Zhōumò nǐ xiǎng zuò shénme?",
+       "a": "fb5717579e88"
+      },
+      "ans": {
+       "zh": "週末我想去看電影。",
+       "en": "On the weekend I want to go see a movie.",
+       "py": "Zhōumò wǒ xiǎng qù kàn diànyǐng.",
+       "a": "cb71a78aede3"
+      }
+     },
+     {
+      "q": {
+       "zh": "你想看美國電影還是臺灣電影？",
+       "en": "Do you want to see an American movie or a Taiwanese movie?",
+       "py": "Nǐ xiǎng kàn Měiguó diànyǐng háishì Táiwān diànyǐng?",
+       "a": "f283a42ad393"
+      },
+      "ans": {
+       "zh": "我想看臺灣電影，看電影可以學中文。",
+       "en": "I want to see a Taiwanese movie. Watching movies helps you learn Chinese.",
+       "py": "Wǒ xiǎng kàn Táiwān diànyǐng, kàn diànyǐng kěyǐ xué Zhōngwén.",
+       "a": "00dd789d83e0"
+      }
+     },
+     {
+      "q": {
+       "zh": "今天晚上我們一起吃晚飯，好不好？",
+       "en": "Shall we have dinner together tonight?",
+       "py": "Jīntiān wǎnshàng wǒmen yìqǐ chī wǎnfàn, hǎo bù hǎo?",
+       "a": "b91bb792280c"
+      },
+      "ans": {
+       "zh": "好啊！我們去吃越南菜，怎麼樣？",
+       "en": "Sure! How about we go eat Vietnamese food?",
+       "py": "Hǎo a! Wǒmen qù chī Yuènán cài, zěnmeyàng?",
+       "a": "56e3be2d664f"
+      }
+     },
+     {
+      "q": {
+       "zh": "明天早上我們去踢足球，怎麼樣？",
+       "en": "How about we go play soccer tomorrow morning?",
+       "py": "Míngtiān zǎoshàng wǒmen qù tī zúqiú, zěnmeyàng?",
+       "a": "3dc14da6b776"
+      },
+      "ans": {
+       "zh": "好啊！我們一起去。",
+       "en": "Great! Let's go together.",
+       "py": "Hǎo a! Wǒmen yìqǐ qù.",
+       "a": "8f4ac410062c"
+      }
+     }
+    ],
+    "full": "speak_L3_1.mp3"
+   }
+  ]
  },
  {
   "speakers": [
@@ -1755,7 +2115,127 @@ window.LESSONS = [
   "n": 4,
   "zh": "請問一共多少錢？",
   "en": "Excuse Me. How Much Does That Cost in Total?",
-  "topic": "Shopping"
+  "topic": "Shopping",
+  "speak": [
+   {
+    "title": "會話練習 Speaking practice",
+    "items": [
+     {
+      "q": {
+       "zh": "你要喝咖啡還是喝茶？",
+       "en": "Would you like coffee or tea?",
+       "py": "Nǐ yào hē kāfēi háishì hē chá?",
+       "a": "f52e361c4b5c"
+      },
+      "ans": {
+       "zh": "我要一杯熱咖啡。",
+       "en": "I'd like a hot coffee.",
+       "py": "Wǒ yào yìbēi rè kāfēi.",
+       "a": "7f8a421f31dc"
+      }
+     },
+     {
+      "q": {
+       "zh": "你要大杯、中杯還是小杯？",
+       "en": "Would you like a large, medium or small?",
+       "py": "Nǐ yào dàbēi, zhōngbēi háishì xiǎobēi?",
+       "a": "637b0072359a"
+      },
+      "ans": {
+       "zh": "我要中杯。",
+       "en": "I'd like a medium.",
+       "py": "Wǒ yào zhōngbēi.",
+       "a": "3316324fd845"
+      }
+     },
+     {
+      "q": {
+       "zh": "請問外帶還是內用？",
+       "en": "To go or for here?",
+       "py": "Qǐngwèn wàidài háishì nèiyòng?",
+       "a": "3d8d2d9b9c66"
+      },
+      "ans": {
+       "zh": "外帶，謝謝。",
+       "en": "To go, thanks.",
+       "py": "Wàidài, xièxie.",
+       "a": "0a3bdb84334a"
+      }
+     },
+     {
+      "q": {
+       "zh": "一杯咖啡多少錢？",
+       "en": "How much is a cup of coffee?",
+       "py": "Yìbēi kāfēi duōshǎo qián?",
+       "a": "8971c102f7d3"
+      },
+      "ans": {
+       "zh": "一杯咖啡八十塊。",
+       "en": "A cup of coffee is eighty dollars.",
+       "py": "Yìbēi kāfēi bāshí kuài.",
+       "a": "de5d78c200f7"
+      }
+     },
+     {
+      "q": {
+       "zh": "你的手機是新的還是舊的？",
+       "en": "Is your cell phone new or old?",
+       "py": "Nǐ de shǒujī shì xīn de háishì jiù de?",
+       "a": "dc3f5e894fc6"
+      },
+      "ans": {
+       "zh": "我的手機太舊了，我想買一支新手機。",
+       "en": "My phone is too old. I want to buy a new one.",
+       "py": "Wǒ de shǒujī tài jiù le, wǒ xiǎng mǎi yìzhī xīn shǒujī.",
+       "a": "37b53a636307"
+      }
+     },
+     {
+      "q": {
+       "zh": "你想買哪種手機？",
+       "en": "What kind of phone do you want to buy?",
+       "py": "Nǐ xiǎng mǎi nǎzhǒng shǒujī?",
+       "a": "d1c7ae8200b8"
+      },
+      "ans": {
+       "zh": "我想買能照相也能上網的手機。",
+       "en": "I want a phone that can take photos and go online.",
+       "py": "Wǒ xiǎng mǎi néng zhàoxiàng yě néng shàngwǎng de shǒujī.",
+       "a": "4cdd3665fe02"
+      }
+     },
+     {
+      "q": {
+       "zh": "那種手機貴不貴？一支賣多少錢？",
+       "en": "Is that kind of phone expensive? How much does one sell for?",
+       "py": "Nàzhǒng shǒujī guì bú guì? Yìzhī mài duōshǎo qián?",
+       "a": "0ec271f1de2e"
+      },
+      "ans": {
+       "zh": "那種手機不便宜，一支要兩萬多。",
+       "en": "That kind of phone isn't cheap. One costs over twenty thousand.",
+       "py": "Nàzhǒng shǒujī bú piányí, yìzhī yào liǎng wàn duō.",
+       "a": "80b8b6327c21"
+      }
+     },
+     {
+      "q": {
+       "zh": "你為什麼要買新手機？",
+       "en": "Why do you want to buy a new phone?",
+       "py": "Nǐ wèishénme yào mǎi xīn shǒujī?",
+       "a": "e2b6cb1d21be"
+      },
+      "ans": {
+       "zh": "我的手機太舊了，不好看。",
+       "en": "My phone is too old, and it doesn't look nice.",
+       "py": "Wǒ de shǒujī tài jiù le, bù hǎokàn.",
+       "a": "7488e5f6514c"
+      }
+     }
+    ],
+    "full": "speak_L4_1.mp3"
+   }
+  ]
  },
  {
   "speakers": [
@@ -2182,7 +2662,141 @@ window.LESSONS = [
   "n": 5,
   "zh": "牛肉麵真好吃",
   "en": "Beef Noodles Are Really Delicious",
-  "topic": "Food and Drink"
+  "topic": "Food and Drink",
+  "speak": [
+   {
+    "title": "會話練習 Speaking practice",
+    "items": [
+     {
+      "q": {
+       "zh": "你最喜歡吃什麼臺灣小吃？",
+       "en": "Which Taiwanese snack do you like best?",
+       "py": "Nǐ zuì xǐhuān chī shénme Táiwān xiǎochī?",
+       "a": "529db39e2118"
+      },
+      "ans": {
+       "zh": "我最喜歡吃小籠包。",
+       "en": "I like soup dumplings best.",
+       "py": "Wǒ zuì xǐhuān chī xiǎolóngbāo.",
+       "a": "acee75863150"
+      }
+     },
+     {
+      "q": {
+       "zh": "你覺得臭豆腐好吃嗎？",
+       "en": "Do you think stinky tofu tastes good?",
+       "py": "Nǐ juéde chòu dòufǔ hǎochī ma?",
+       "a": "49c5ddee00d3"
+      },
+      "ans": {
+       "zh": "我覺得臭豆腐很好吃。",
+       "en": "I think stinky tofu is delicious.",
+       "py": "Wǒ juéde chòu dòufǔ hěn hǎochī.",
+       "a": "8a92542c1907"
+      }
+     },
+     {
+      "q": {
+       "zh": "你知道哪家牛肉麵店很有名嗎？",
+       "en": "Do you know which beef noodle shop is famous?",
+       "py": "Nǐ zhīdào nǎjiā niúròumiàn diàn hěn yǒumíng ma?",
+       "a": "43e7c91f2b05"
+      },
+      "ans": {
+       "zh": "我知道一家很有名的牛肉麵店，我們一起去吃吧！",
+       "en": "I know a famous beef noodle shop. Let's go eat there together!",
+       "py": "Wǒ zhīdào yìjiā hěn yǒumíng de niúròumiàn diàn, wǒmen yìqǐ qù chī ba!",
+       "a": "98f73ff0e924"
+      }
+     },
+     {
+      "q": {
+       "zh": "你怕辣嗎？",
+       "en": "Are you afraid of spicy food?",
+       "py": "Nǐ pà là ma?",
+       "a": "a0824cd35ae9"
+      },
+      "ans": {
+       "zh": "我有一點怕辣。",
+       "en": "I'm a little afraid of spicy food.",
+       "py": "Wǒ yǒu yìdiǎn pà là.",
+       "a": "6cb0e14e789b"
+      }
+     },
+     {
+      "q": {
+       "zh": "你會做飯嗎？做得怎麼樣？",
+       "en": "Can you cook? How well do you cook?",
+       "py": "Nǐ huì zuòfàn ma? Zuò de zěnmeyàng?",
+       "a": "c5447587bc76"
+      },
+      "ans": {
+       "zh": "我會做飯，可是我做得不好。",
+       "en": "I can cook, but I don't cook well.",
+       "py": "Wǒ huì zuòfàn, kěshì wǒ zuò de bù hǎo.",
+       "a": "5d17f2544178"
+      }
+     },
+     {
+      "q": {
+       "zh": "你喜歡自己做飯嗎？",
+       "en": "Do you like to cook for yourself?",
+       "py": "Nǐ xǐhuān zìjǐ zuòfàn ma?",
+       "a": "ba73d9b26a3d"
+      },
+      "ans": {
+       "zh": "我不喜歡，我做得不好，所以我常去餐廳吃飯。",
+       "en": "No. I don't cook well, so I often eat at restaurants.",
+       "py": "Wǒ bù xǐhuān, wǒ zuò de bù hǎo, suǒyǐ wǒ cháng qù cāntīng chīfàn.",
+       "a": "b79dc5adea07"
+      }
+     },
+     {
+      "q": {
+       "zh": "你喜歡吃甜點嗎？",
+       "en": "Do you like desserts?",
+       "py": "Nǐ xǐhuān chī tiándiǎn ma?",
+       "a": "471fffd7666b"
+      },
+      "ans": {
+       "zh": "我最喜歡吃甜點。",
+       "en": "I love desserts the most.",
+       "py": "Wǒ zuì xǐhuān chī tiándiǎn.",
+       "a": "c04ffdcca981"
+      }
+     },
+     {
+      "q": {
+       "zh": "昨天晚上你吃什麼？好吃嗎？",
+       "en": "What did you eat last night? Was it good?",
+       "py": "Zuótiān wǎnshàng nǐ chī shénme? Hǎochī ma?",
+       "a": "d567a37bc148"
+      },
+      "ans": {
+       "zh": "昨天晚上我吃牛肉麵，牛肉好吃，湯也好喝。",
+       "en": "Last night I had beef noodles. The beef was good and the soup was tasty too.",
+       "py": "Zuótiān wǎnshàng wǒ chī niúròumiàn, niúròu hǎochī, tāng yě hǎohē.",
+       "a": "258dfc83eaf4"
+      }
+     },
+     {
+      "q": {
+       "zh": "你可以教我做甜點嗎？",
+       "en": "Can you teach me to make desserts?",
+       "py": "Nǐ kěyǐ jiāo wǒ zuò tiándiǎn ma?",
+       "a": "32adbee47b8c"
+      },
+      "ans": {
+       "zh": "好的，這個週末你到我家來。",
+       "en": "Sure. Come to my place this weekend.",
+       "py": "Hǎode, zhège zhōumò nǐ dào wǒ jiā lái.",
+       "a": "4bfe7764ddea"
+      }
+     }
+    ],
+    "full": "speak_L5_1.mp3"
+   }
+  ]
  },
  {
   "speakers": [
@@ -2252,7 +2866,7 @@ window.LESSONS = [
       "s": 0,
       "zh": "好啊！我現在要去學校附近的咖啡店買咖啡。妳呢？",
       "en": "Okay. I am going to go to a café near the school now to buy some coffee. How about you?",
-      "py": "Hǎo a! Wǒ xiànzài yào qù xuéxiào fùjìn de kāfēi diàn mǎi kāfēi. Nǐ ne?",
+      "py": "Hǎo a! Wǒ xiànzài yào qù xuéxiào fùjìn de kāfēidiàn mǎi kāfēi. Nǐ ne?",
       "a": "5f419ea6b598"
      },
      {
@@ -2637,7 +3251,346 @@ window.LESSONS = [
   "n": 6,
   "zh": "他們學校在山上",
   "en": "Their School Is Up in the Mountains",
-  "topic": "Locations and Positions"
+  "topic": "Locations and Positions",
+  "speak": [
+   {
+    "title": "會話練習 Speaking practice",
+    "items": [
+     {
+      "q": {
+       "zh": "你是哪國人？你現在在臺灣的家在哪裡？",
+       "en": "Which country are you from? Where is your home in Taiwan now?",
+       "py": "Nǐ shì nǎ guó rén? Nǐ xiànzài zài Táiwān de jiā zài nǎlǐ?",
+       "a": "ef1fb881db6f"
+      },
+      "ans": {
+       "zh": "我是美國人。我現在在臺灣的家在學校附近。",
+       "en": "I'm American. My home in Taiwan is near the school.",
+       "py": "Wǒ shì Měiguó rén. Wǒ xiànzài zài Táiwān de jiā zài xuéxiào fùjìn.",
+       "a": "5c61304ffea1"
+      }
+     },
+     {
+      "q": {
+       "zh": "你家前面有什麼？後面呢？",
+       "en": "What is in front of your home? And behind it?",
+       "py": "Nǐ jiā qiánmiàn yǒu shénme? Hòumiàn ne?",
+       "a": "bd857c8d1b42"
+      },
+      "ans": {
+       "zh": "我家前面有一家咖啡店，後面有山。",
+       "en": "There's a coffee shop in front of my home and a mountain behind it.",
+       "py": "Wǒ jiā qiánmiàn yǒu yìjiā kāfēidiàn, hòumiàn yǒu shān.",
+       "a": "03ab064ad5e7"
+      }
+     },
+     {
+      "q": {
+       "zh": "從你家到學校遠不遠？方便不方便？",
+       "en": "Is it far from your home to school? Is it convenient?",
+       "py": "Cóng nǐ jiā dào xuéxiào yuǎn bù yuǎn? Fāngbiàn bù fāngbiàn?",
+       "a": "33b9f3a93681"
+      },
+      "ans": {
+       "zh": "不遠，很近，很方便。",
+       "en": "It's not far. It's close and very convenient.",
+       "py": "Bù yuǎn, hěn jìn, hěn fāngbiàn.",
+       "a": "8fac2ad1b32a"
+      }
+     },
+     {
+      "q": {
+       "zh": "你家附近有咖啡店嗎？那家店在哪裡？",
+       "en": "Is there a coffee shop near your home? Where is it?",
+       "py": "Nǐ jiā fùjìn yǒu kāfēidiàn ma? Nàjiā diàn zài nǎlǐ?",
+       "a": "876b25b66163"
+      },
+      "ans": {
+       "zh": "有，那家店在我家旁邊。",
+       "en": "Yes, it's right next to my home.",
+       "py": "Yǒu, nàjiā diàn zài wǒ jiā pángbiān.",
+       "a": "d875bce3304f"
+      }
+     },
+     {
+      "q": {
+       "zh": "那家餐廳的什麼最好吃？一碗或一個多少錢？",
+       "en": "What is the best dish at that restaurant? How much is one bowl or one piece?",
+       "py": "Nàjiā cāntīng de shénme zuì hǎochī? Yìwǎn huò yí ge duōshǎo qián?",
+       "a": "735e6e96275d"
+      },
+      "ans": {
+       "zh": "那家餐廳的牛肉麵最好吃，一碗一百五十塊。",
+       "en": "The beef noodles are the best there. One bowl is 150 dollars.",
+       "py": "Nàjiā cāntīng de niúròumiàn zuì hǎochī, yìwǎn yìbǎi wǔshí kuài.",
+       "a": "b33530b331ac"
+      }
+     },
+     {
+      "q": {
+       "zh": "我們的教室在幾樓？教室外面有什麼？",
+       "en": "Which floor is our classroom on? What is outside the classroom?",
+       "py": "Wǒmen de jiàoshì zài jǐlóu? Jiàoshì wàimiàn yǒu shénme?",
+       "a": "5e272f19f5f0"
+      },
+      "ans": {
+       "zh": "我們的教室在三樓，教室外面有很多學生。",
+       "en": "Our classroom is on the third floor. There are lots of students outside.",
+       "py": "Wǒmen de jiàoshì zài sānlóu, jiàoshì wàimiàn yǒu hěn duō xuéshēng.",
+       "a": "f02a9f158b0b"
+      }
+     },
+     {
+      "q": {
+       "zh": "學校的圖書館在哪裡？旁邊有什麼？",
+       "en": "Where is the school library? What is next to it?",
+       "py": "Xuéxiào de túshūguǎn zài nǎlǐ? Pángbiān yǒu shénme?",
+       "a": "713d996bc9c8"
+      },
+      "ans": {
+       "zh": "圖書館在教室後面，旁邊有一家咖啡店。",
+       "en": "The library is behind the classrooms. There's a coffee shop next to it.",
+       "py": "Túshūguǎn zài jiàoshì hòumiàn, pángbiān yǒu yìjiā kāfēidiàn.",
+       "a": "653659c26867"
+      }
+     },
+     {
+      "q": {
+       "zh": "你常到哪家商店買東西？那家店在哪裡？",
+       "en": "Which store do you usually shop at? Where is it?",
+       "py": "Nǐ cháng dào nǎjiā shāngdiàn mǎi dōngxi? Nàjiā diàn zài nǎlǐ?",
+       "a": "d0715dcb1b72"
+      },
+      "ans": {
+       "zh": "我常到學校外面的那家商店買東西，那家店在銀行旁邊。",
+       "en": "I usually shop at the store outside school. It's next to the bank.",
+       "py": "Wǒ cháng dào xuéxiào wàimiàn de nàjiā shāngdiàn mǎi dōngxi, nàjiā diàn zài yínháng pángbiān.",
+       "a": "4891bf289f84"
+      }
+     },
+     {
+      "q": {
+       "zh": "你想買一本書，要到哪裡買？那個地方在學校裡面還是外面？",
+       "en": "If you want to buy a book, where do you go? Is that place inside or outside the school?",
+       "py": "Nǐ xiǎng mǎi yìběn shū, yào dào nǎlǐ mǎi? Nà ge dìfāng zài xuéxiào lǐmiàn háishì wàimiàn?",
+       "a": "3809f254c948"
+      },
+      "ans": {
+       "zh": "我要到書店買。書店在學校外面。",
+       "en": "I go to a bookstore. The bookstore is outside the school.",
+       "py": "Wǒ yào dào shūdiàn mǎi. Shūdiàn zài xuéxiào wàimiàn.",
+       "a": "c8a7831f944b"
+      }
+     },
+     {
+      "q": {
+       "zh": "你不想在宿舍吃飯，想到哪裡吃？那家餐廳的旁邊有什麼？",
+       "en": "You don't want to eat in the dorm. Where do you want to eat? What is next to that restaurant?",
+       "py": "Nǐ bù xiǎng zài sùshè chīfàn, xiǎng dào nǎlǐ chī? Nàjiā cāntīng de pángbiān yǒu shénme?",
+       "a": "d80d15e005c7"
+      },
+      "ans": {
+       "zh": "我想到學校附近的越南餐廳吃。那家餐廳的旁邊有一家咖啡店。",
+       "en": "I want to eat at the Vietnamese restaurant near school. There's a coffee shop next to it.",
+       "py": "Wǒ xiǎng dào xuéxiào fùjìn de Yuènán cāntīng chī. Nàjiā cāntīng de pángbiān yǒu yìjiā kāfēidiàn.",
+       "a": "a418378745bd"
+      }
+     },
+     {
+      "q": {
+       "zh": "學校的游泳池在哪裡？附近有沒有商店或餐廳？",
+       "en": "Where is the school swimming pool? Are there stores or restaurants nearby?",
+       "py": "Xuéxiào de yóuyǒngchí zài nǎlǐ? Fùjìn yǒu méi yǒu shāngdiàn huò cāntīng?",
+       "a": "223e1a16667f"
+      },
+      "ans": {
+       "zh": "游泳池在圖書館後面，附近有一家商店，沒有餐廳。",
+       "en": "The pool is behind the library. There's a store nearby but no restaurant.",
+       "py": "Yóuyǒngchí zài túshūguǎn hòumiàn, fùjìn yǒu yìjiā shāngdiàn, méi yǒu cāntīng.",
+       "a": "853f1543a793"
+      }
+     },
+     {
+      "q": {
+       "zh": "朋友到學校找你，你想在哪裡和他見面？為什麼？",
+       "en": "A friend comes to school to see you. Where do you want to meet? Why?",
+       "py": "Péngyǒu dào xuéxiào zhǎo nǐ, nǐ xiǎng zài nǎlǐ hàn tā jiànmiàn? Wèishénme?",
+       "a": "9b162a57ef8a"
+      },
+      "ans": {
+       "zh": "我想在圖書館前面和他見面，那裡很近，很方便。",
+       "en": "I want to meet in front of the library. It's close and convenient.",
+       "py": "Wǒ xiǎng zài túshūguǎn qiánmiàn hàn tā jiànmiàn, nàlǐ hěn jìn, hěn fāngbiàn.",
+       "a": "be3d484ad73b"
+      }
+     },
+     {
+      "q": {
+       "zh": "你常去的商店裡面有什麼？你想在那裡買什麼？",
+       "en": "What is inside the store you often go to? What do you want to buy there?",
+       "py": "Nǐ cháng qù de shāngdiàn lǐmiàn yǒu shénme? Nǐ xiǎng zài nàlǐ mǎi shénme?",
+       "a": "bc44d9abd4dd"
+      },
+      "ans": {
+       "zh": "那家商店裡面有很多東西，我想在那裡買咖啡和包子。",
+       "en": "That store has lots of things. I want to buy coffee and steamed buns there.",
+       "py": "Nàjiā shāngdiàn lǐmiàn yǒu hěn duō dōngxi, wǒ xiǎng zài nàlǐ mǎi kāfēi hàn bāozi.",
+       "a": "e9d3e87bea8a"
+      }
+     },
+     {
+      "q": {
+       "zh": "有個學校在山上，附近沒有商店和餐廳。你想去那裡上課嗎？為什麼？",
+       "en": "A school is on a mountain with no stores or restaurants nearby. Would you study there? Why?",
+       "py": "Yǒu ge xuéxiào zài shānshàng, fùjìn méi yǒu shāngdiàn hàn cāntīng. Nǐ xiǎng qù nàlǐ shàngkè ma? Wèishénme?",
+       "a": "1bd144026e42"
+      },
+      "ans": {
+       "zh": "我不想去，那裡太遠了，很不方便。",
+       "en": "I wouldn't. It's too far and very inconvenient.",
+       "py": "Wǒ bù xiǎng qù, nàlǐ tài yuǎn le, hěn bù fāngbiàn.",
+       "a": "450b8f37f423"
+      }
+     },
+     {
+      "q": {
+       "zh": "你想在咖啡店教朋友中文，還是在家裡教？為什麼？",
+       "en": "Would you rather teach your friend Chinese at a coffee shop or at home? Why?",
+       "py": "Nǐ xiǎng zài kāfēidiàn jiào péngyǒu Zhōngwén, háishì zài jiā lǐ jiào? Wèishénme?",
+       "a": "920cd0b9d6fd"
+      },
+      "ans": {
+       "zh": "我想在咖啡店教，咖啡店很近，也可以喝咖啡。",
+       "en": "At a coffee shop. It's close, and we can drink coffee too.",
+       "py": "Wǒ xiǎng zài kāfēidiàn jiào, kāfēidiàn hěn jìn, yě kěyǐ hē kāfēi.",
+       "a": "3e0eb2ce0da5"
+      }
+     },
+     {
+      "q": {
+       "zh": "教室裡面，老師的前面有什麼？後面有什麼？",
+       "en": "In the classroom, what is in front of the teacher? What is behind?",
+       "py": "Jiàoshì lǐmiàn, lǎoshī de qiánmiàn yǒu shénme? Hòumiàn yǒu shénme?",
+       "a": "75190788f6b9"
+      },
+      "ans": {
+       "zh": "老師的前面有很多學生，後面有很多中文字。",
+       "en": "In front of the teacher are many students. Behind are lots of Chinese characters.",
+       "py": "Lǎoshī de qiánmiàn yǒu hěn duō xuéshēng, hòumiàn yǒu hěn duō Zhōngwén zì.",
+       "a": "054bf5fb3930"
+      }
+     },
+     {
+      "q": {
+       "zh": "朋友想看看學校的風景，你想帶他去哪個地方？那裡有什麼？",
+       "en": "Your friend wants to see the school's scenery. Where will you take them? What is there?",
+       "py": "Péngyǒu xiǎng kànkan xuéxiào de fēngjǐng, nǐ xiǎng dài tā qù nǎ ge dìfāng? Nàlǐ yǒu shénme?",
+       "a": "f788611cecd7"
+      },
+      "ans": {
+       "zh": "我想帶他去學校後面的山上，那裡的風景很美，前面有海。",
+       "en": "I'll take them up the mountain behind school. The view is beautiful, with the sea in front.",
+       "py": "Wǒ xiǎng dài tā qù xuéxiào hòumiàn de shānshàng, nàlǐ de fēngjǐng hěn měi, qiánmiàn yǒu hǎi.",
+       "a": "f3b3e410438c"
+      }
+     },
+     {
+      "q": {
+       "zh": "你常去的咖啡店在大樓裡面還是外面？你覺得那裡怎麼樣？",
+       "en": "Is the coffee shop you go to inside or outside a building? What do you think of it?",
+       "py": "Nǐ cháng qù de kāfēidiàn zài dàlóu lǐmiàn háishì wàimiàn? Nǐ juéde nàlǐ zěnmeyàng?",
+       "a": "560e18016656"
+      },
+      "ans": {
+       "zh": "在大樓裡面。我覺得那裡很不錯，咖啡也很便宜。",
+       "en": "It's inside a building. I think it's very nice, and the coffee is cheap too.",
+       "py": "Zài dàlóu lǐmiàn. Wǒ juéde nàlǐ hěn búcuò, kāfēi yě hěn piányí.",
+       "a": "4b91dd767158"
+      }
+     },
+     {
+      "q": {
+       "zh": "學校附近的餐廳，有的很有名，有的很便宜。你想去哪家吃飯？為什麼？",
+       "en": "Some restaurants near school are famous and some are cheap. Which would you go to? Why?",
+       "py": "Xuéxiào fùjìn de cāntīng, yǒu de hěn yǒumíng, yǒu de hěn piányí. Nǐ xiǎng qù nǎjiā chīfàn? Wèishénme?",
+       "a": "920f42b91e5b"
+      },
+      "ans": {
+       "zh": "我想去便宜的那家，我是學生，錢不多。",
+       "en": "The cheap one. I'm a student and I don't have much money.",
+       "py": "Wǒ xiǎng qù piányí de nàjiā, wǒ shì xuéshēng, qián bù duō.",
+       "a": "179fa391fd69"
+      }
+     },
+     {
+      "q": {
+       "zh": "你喜歡在圖書館裡面還是外面看書？為什麼？",
+       "en": "Do you prefer reading inside or outside the library? Why?",
+       "py": "Nǐ xǐhuān zài túshūguǎn lǐmiàn háishì wàimiàn kànshū? Wèishénme?",
+       "a": "86dc4e440861"
+      },
+      "ans": {
+       "zh": "我喜歡在圖書館裡面看書，外面太熱了。",
+       "en": "Inside the library. It's too hot outside.",
+       "py": "Wǒ xǐhuān zài túshūguǎn lǐmiàn kànshū, wàimiàn tài rè le.",
+       "a": "c5dd766f69cb"
+      }
+     }
+    ],
+    "full": "speak_L6_1.mp3"
+   },
+   {
+    "title": "追問 Follow-up questions",
+    "items": [
+     {
+      "q": {
+       "zh": "在哪裡？",
+       "en": "Where?",
+       "py": "Zài nǎlǐ?",
+       "a": "ca2e92e259a3"
+      },
+      "ans": null
+     },
+     {
+      "q": {
+       "zh": "幾點？",
+       "en": "What time?",
+       "py": "Jǐdiǎn?",
+       "a": "13adb3df11e6"
+      },
+      "ans": null
+     },
+     {
+      "q": {
+       "zh": "為什麼？",
+       "en": "Why?",
+       "py": "Wèishénme?",
+       "a": "8dccdfeb5c38"
+      },
+      "ans": null
+     },
+     {
+      "q": {
+       "zh": "多少錢？",
+       "en": "How much?",
+       "py": "Duōshǎo qián?",
+       "a": "6fda18770a1a"
+      },
+      "ans": null
+     },
+     {
+      "q": {
+       "zh": "你呢？",
+       "en": "And you?",
+       "py": "Nǐ ne?",
+       "a": "ae73a70dd978"
+      },
+      "ans": null
+     }
+    ],
+    "full": "speak_L6_2.mp3"
+   }
+  ]
  },
  {
   "speakers": [
@@ -2672,7 +3625,7 @@ window.LESSONS = [
       "s": 1,
       "zh": "去 KTV 唱歌。我和朋友九點二十分在大安 KTV 見面。",
       "en": "To KTV to sing. My friends and I are meeting at Da-an KTV at 9:20.",
-      "py": "Qù KTV chànggē. Wǒ hàn péngyǒu jiǔdiǎn èrshí fēn zài Dà'ān KTV jiànmiàn.",
+      "py": "Qù KTV chànggē. Wǒ hàn péngyǒu jiǔdiǎn èrshífēn zài Dà'ān KTV jiànmiàn.",
       "a": "4138698fbd8f"
      },
      {
@@ -3099,6 +4052,294 @@ window.LESSONS = [
   "n": 7,
   "zh": "早上九點去 KTV",
   "en": "Going to KTV at 9 O'clock in the Morning",
-  "topic": "Time"
+  "topic": "Time",
+  "speak": [
+   {
+    "title": "會話練習 Speaking practice",
+    "items": [
+     {
+      "q": {
+       "zh": "現在幾點幾分？今天的中文課幾點結束？",
+       "en": "What time is it now? What time does today's Chinese class end?",
+       "py": "Xiànzài jǐdiǎn jǐfēn? Jīntiān de Zhōngwén kè jǐdiǎn jiéshù?",
+       "a": "058f83d4afe4"
+      },
+      "ans": {
+       "zh": "現在十點二十分。今天的中文課十二點結束。",
+       "en": "It's 10:20 now. Today's Chinese class ends at twelve.",
+       "py": "Xiànzài shídiǎn èrshífēn. Jīntiān de Zhōngwén kè shí'èr diǎn jiéshù.",
+       "a": "a2b9ec002bc0"
+      }
+     },
+     {
+      "q": {
+       "zh": "你常幾點到咖啡店去？在那裡做什麼？",
+       "en": "What time do you usually go to the coffee shop? What do you do there?",
+       "py": "Nǐ cháng jǐdiǎn dào kāfēidiàn qù? Zài nàlǐ zuò shénme?",
+       "a": "fb38be8e455f"
+      },
+      "ans": {
+       "zh": "我常早上八點去，在那裡喝咖啡、看書。",
+       "en": "I usually go at 8 a.m. I drink coffee and read there.",
+       "py": "Wǒ cháng zǎoshàng bādiǎn qù, zài nàlǐ hē kāfēi, kànshū.",
+       "a": "c51c38a1574f"
+      }
+     },
+     {
+      "q": {
+       "zh": "你中午常幾點吃飯？在哪裡吃？",
+       "en": "What time do you usually have lunch? Where?",
+       "py": "Nǐ zhōngwǔ cháng jǐdiǎn chīfàn? Zài nǎlǐ chī?",
+       "a": "5e95d7533802"
+      },
+      "ans": {
+       "zh": "我中午常十二點半吃飯，在學校的餐廳吃。",
+       "en": "I usually eat at 12:30, in the school cafeteria.",
+       "py": "Wǒ zhōngwǔ cháng shí'èr diǎn bàn chīfàn, zài xuéxiào de cāntīng chī.",
+       "a": "90abf43cc4f4"
+      }
+     },
+     {
+      "q": {
+       "zh": "你週末從幾點到幾點有空？有空的時候喜歡做什麼？",
+       "en": "From what time to what time are you free on weekends? What do you like to do when free?",
+       "py": "Nǐ zhōumò cóng jǐdiǎn dào jǐdiǎn yǒu kòng? Yǒu kòng de shíhòu xǐhuān zuò shénme?",
+       "a": "b3eb1e5f9a29"
+      },
+      "ans": {
+       "zh": "我週末從下午兩點到六點有空。有空的時候，我喜歡打籃球。",
+       "en": "I'm free from 2 to 6 p.m. on weekends. When I'm free I like to play basketball.",
+       "py": "Wǒ zhōumò cóng xiàwǔ liǎngdiǎn dào liùdiǎn yǒu kòng. Yǒu kòng de shíhòu, wǒ xǐhuān dǎ lánqiú.",
+       "a": "b090dc18ed34"
+      }
+     },
+     {
+      "q": {
+       "zh": "你今天從幾點到幾點上中文課？在哪裡上課？",
+       "en": "From what time to what time is your Chinese class today? Where is it?",
+       "py": "Nǐ jīntiān cóng jǐdiǎn dào jǐdiǎn shàng Zhōngwén kè? Zài nǎlǐ shàngkè?",
+       "a": "e8389259840f"
+      },
+      "ans": {
+       "zh": "我今天從早上九點到十二點上中文課，在圖書館旁邊的大樓上課。",
+       "en": "Today I have Chinese from 9 to 12, in the building next to the library.",
+       "py": "Wǒ jīntiān cóng zǎoshàng jiǔdiǎn dào shí'èr diǎn shàng Zhōngwén kè, zài túshūguǎn pángbiān de dàlóu shàngkè.",
+       "a": "6ab028fe5dec"
+      }
+     },
+     {
+      "q": {
+       "zh": "你喜歡在學校做什麼？常什麼時候做？",
+       "en": "What do you like to do at school? When do you usually do it?",
+       "py": "Nǐ xǐhuān zài xuéxiào zuò shénme? Cháng shénme shíhòu zuò?",
+       "a": "6927c2ae4542"
+      },
+      "ans": {
+       "zh": "我喜歡在學校游泳，常下午四點去。",
+       "en": "I like swimming at school. I usually go at 4 p.m.",
+       "py": "Wǒ xǐhuān zài xuéxiào yóuyǒng, cháng xiàwǔ sìdiǎn qù.",
+       "a": "aed968916843"
+      }
+     },
+     {
+      "q": {
+       "zh": "你喜歡唱歌嗎？會不會唱中文歌？",
+       "en": "Do you like singing? Can you sing Chinese songs?",
+       "py": "Nǐ xǐhuān chànggē ma? Huì bú huì chàng Zhōngwén gē?",
+       "a": "13a05802d180"
+      },
+      "ans": {
+       "zh": "我很喜歡唱歌，可是不會唱中文歌。",
+       "en": "I love singing, but I can't sing Chinese songs.",
+       "py": "Wǒ hěn xǐhuān chànggē, kěshì bú huì chàng Zhōngwén gē.",
+       "a": "742f89c5dbbe"
+      }
+     },
+     {
+      "q": {
+       "zh": "你明天晚上有空嗎？想不想一起到學校附近吃飯？",
+       "en": "Are you free tomorrow evening? Do you want to eat near school together?",
+       "py": "Nǐ míngtiān wǎnshàng yǒu kòng ma? Xiǎng bù xiǎng yìqǐ dào xuéxiào fùjìn chīfàn?",
+       "a": "8ebba74c0a81"
+      },
+      "ans": {
+       "zh": "有空，我想去。我們七點見面，怎麼樣？",
+       "en": "I'm free, I'd like to go. How about we meet at seven?",
+       "py": "Yǒu kòng, wǒ xiǎng qù. Wǒmen qīdiǎn jiànmiàn, zěnmeyàng?",
+       "a": "5e4412683026"
+      }
+     },
+     {
+      "q": {
+       "zh": "你後天什麼時候有空？想去哪裡？我們幾點在哪裡見面？",
+       "en": "When are you free the day after tomorrow? Where do you want to go? When and where shall we meet?",
+       "py": "Nǐ hòutiān shénme shíhòu yǒu kòng? Xiǎng qù nǎlǐ? Wǒmen jǐdiǎn zài nǎlǐ jiànmiàn?",
+       "a": "bdf4ec7ccfbb"
+      },
+      "ans": {
+       "zh": "後天下午我有空，我想去看電影。我們兩點在學校前面見面吧！",
+       "en": "I'm free that afternoon and want to see a movie. Let's meet in front of the school at two!",
+       "py": "Hòutiān xiàwǔ wǒ yǒu kòng, wǒ xiǎng qù kàn diànyǐng. Wǒmen liǎngdiǎn zài xuéxiào qiánmiàn jiànmiàn ba!",
+       "a": "3225b6e61bde"
+      }
+     },
+     {
+      "q": {
+       "zh": "你的朋友想早上九點去KTV，你覺得怎麼樣？你想和他一起去嗎？為什麼？",
+       "en": "Your friend wants to go to KTV at 9 a.m. What do you think? Do you want to go with them? Why?",
+       "py": "Nǐ de péngyǒu xiǎng zǎoshàng jiǔdiǎn qù KTV, nǐ juéde zěnmeyàng? Nǐ xiǎng hàn tā yìqǐ qù ma? Wèishénme?",
+       "a": "379844791bda"
+      },
+      "ans": {
+       "zh": "我覺得早上很便宜。我想和他一起去，我很喜歡唱歌。",
+       "en": "I think it's cheap in the morning. I want to go with them; I love singing.",
+       "py": "Wǒ juéde zǎoshàng hěn piányí. Wǒ xiǎng hàn tā yìqǐ qù, wǒ hěn xǐhuān chànggē.",
+       "a": "437e4f9a423f"
+      }
+     },
+     {
+      "q": {
+       "zh": "你今天四點半有空一起打球嗎？你今天得做什麼？",
+       "en": "Are you free to play ball together at 4:30 today? What do you have to do today?",
+       "py": "Nǐ jīntiān sìdiǎn bàn yǒu kòng yìqǐ dǎqiú ma? Nǐ jīntiān děi zuò shénme?",
+       "a": "3eee7827074b"
+      },
+      "ans": {
+       "zh": "對不起，我沒有空，我今天得去銀行。",
+       "en": "Sorry, I'm not free. I have to go to the bank today.",
+       "py": "Duìbùqǐ, wǒ méi yǒu kòng, wǒ jīntiān děi qù yínháng.",
+       "a": "f6be658f026e"
+      }
+     },
+     {
+      "q": {
+       "zh": "我晚上七點想和你一起吃飯，你有空嗎？你從幾點到幾點有空？",
+       "en": "I'd like to have dinner with you at 7 p.m. Are you free? From when to when are you free?",
+       "py": "Wǒ wǎnshàng qīdiǎn xiǎng hàn nǐ yìqǐ chīfàn, nǐ yǒu kòng ma? Nǐ cóng jǐdiǎn dào jǐdiǎn yǒu kòng?",
+       "a": "55dcc3d23725"
+      },
+      "ans": {
+       "zh": "有空啊！我從六點到九點有空。",
+       "en": "Sure, I'm free! I'm free from six to nine.",
+       "py": "Yǒu kòng a! Wǒ cóng liùdiǎn dào jiǔdiǎn yǒu kòng.",
+       "a": "50001a45d5dd"
+      }
+     },
+     {
+      "q": {
+       "zh": "你在聽音樂嗎？你想聽哪國的音樂？",
+       "en": "Are you listening to music? Which country's music do you want to hear?",
+       "py": "Nǐ zài tīng yīnyuè ma? Nǐ xiǎng tīng nǎ guó de yīnyuè?",
+       "a": "31e0291c7a15"
+      },
+      "ans": {
+       "zh": "是啊，我在聽音樂。我想聽臺灣的音樂。",
+       "en": "Yes, I'm listening to music. I want to listen to Taiwanese music.",
+       "py": "Shì a, wǒ zài tīng yīnyuè. Wǒ xiǎng tīng Táiwān de yīnyuè.",
+       "a": "eb78c49c04c5"
+      }
+     },
+     {
+      "q": {
+       "zh": "你每天都在家裡吃晚餐嗎？不在家吃的時候，你在哪裡吃？",
+       "en": "Do you eat dinner at home every day? When you don't, where do you eat?",
+       "py": "Nǐ měitiān dōu zài jiā lǐ chī wǎncān ma? Bú zài jiā chī de shíhòu, nǐ zài nǎlǐ chī?",
+       "a": "329d11b20555"
+      },
+      "ans": {
+       "zh": "我不是每天都在家裡吃晚餐。不在家吃的時候，我在學校附近的餐廳吃。",
+       "en": "Not every day. When I don't eat at home, I eat at a restaurant near school.",
+       "py": "Wǒ bú shì měitiān dōu zài jiā lǐ chī wǎncān. Bú zài jiā chī de shíhòu, wǒ zài xuéxiào fùjìn de cāntīng chī.",
+       "a": "f9f84f5098fc"
+      }
+     },
+     {
+      "q": {
+       "zh": "你喜歡看籃球比賽，還是打籃球？為什麼？",
+       "en": "Do you prefer watching basketball games or playing basketball? Why?",
+       "py": "Nǐ xǐhuān kàn lánqiú bǐsài, háishì dǎ lánqiú? Wèishénme?",
+       "a": "2c4a0cc3d734"
+      },
+      "ans": {
+       "zh": "我喜歡打籃球，打籃球很好玩。",
+       "en": "I prefer playing. Playing basketball is a lot of fun.",
+       "py": "Wǒ xǐhuān dǎ lánqiú, dǎ lánqiú hěn hǎowán.",
+       "a": "d7043749b8b6"
+      }
+     },
+     {
+      "q": {
+       "zh": "你每天都上中文課嗎？不上中文課的時候，你做什麼？",
+       "en": "Do you have Chinese class every day? What do you do when you don't?",
+       "py": "Nǐ měitiān dōu shàng Zhōngwén kè ma? Bú shàng Zhōngwén kè de shíhòu, nǐ zuò shénme?",
+       "a": "2d7b0ba79c91"
+      },
+      "ans": {
+       "zh": "我每天都上中文課。不上課的時候，我去游泳。",
+       "en": "I have Chinese class every day. When I don't have class, I go swimming.",
+       "py": "Wǒ měitiān dōu shàng Zhōngwén kè. Bú shàngkè de shíhòu, wǒ qù yóuyǒng.",
+       "a": "202bee0582ba"
+      }
+     },
+     {
+      "q": {
+       "zh": "你會唱哪國的歌？唱得怎麼樣？你想學唱哪國的歌？",
+       "en": "Which country's songs can you sing? How well do you sing? Which country's songs do you want to learn?",
+       "py": "Nǐ huì chàng nǎ guó de gē? Chàng de zěnmeyàng? Nǐ xiǎng xué chàng nǎ guó de gē?",
+       "a": "e8c49f321391"
+      },
+      "ans": {
+       "zh": "我會唱美國歌，唱得不錯。我想學唱臺灣歌。",
+       "en": "I can sing American songs, and I sing them pretty well. I want to learn Taiwanese songs.",
+       "py": "Wǒ huì chàng Měiguó gē, chàng de búcuò. Wǒ xiǎng xué chàng Táiwān gē.",
+       "a": "afd698af97a1"
+      }
+     },
+     {
+      "q": {
+       "zh": "你晚上常從幾點到幾點上網？在家裡還是在圖書館？",
+       "en": "From when to when do you usually go online in the evening? At home or in the library?",
+       "py": "Nǐ wǎnshàng cháng cóng jǐdiǎn dào jǐdiǎn shàngwǎng? Zài jiā lǐ háishì zài túshūguǎn?",
+       "a": "2803c824b95f"
+      },
+      "ans": {
+       "zh": "我晚上常從八點到十點上網，在家裡上網。",
+       "en": "I usually go online from eight to ten, at home.",
+       "py": "Wǒ wǎnshàng cháng cóng bādiǎn dào shídiǎn shàngwǎng, zài jiā lǐ shàngwǎng.",
+       "a": "7755adfa5fa8"
+      }
+     },
+     {
+      "q": {
+       "zh": "你可以在圖書館裡面喝咖啡嗎？你想在哪裡喝咖啡？",
+       "en": "Can you drink coffee inside the library? Where do you want to drink coffee?",
+       "py": "Nǐ kěyǐ zài túshūguǎn lǐmiàn hē kāfēi ma? Nǐ xiǎng zài nǎlǐ hē kāfēi?",
+       "a": "7590a9895de8"
+      },
+      "ans": {
+       "zh": "不可以。我想在圖書館外面的咖啡店喝咖啡。",
+       "en": "No. I want to drink coffee at the coffee shop outside the library.",
+       "py": "Bù kěyǐ. Wǒ xiǎng zài túshūguǎn wàimiàn de kāfēidiàn hē kāfēi.",
+       "a": "d4e7a9baa73a"
+      }
+     },
+     {
+      "q": {
+       "zh": "你想學書法嗎？想什麼時候學？在哪裡學？",
+       "en": "Do you want to learn calligraphy? When? Where?",
+       "py": "Nǐ xiǎng xué shūfǎ ma? Xiǎng shénme shíhòu xué? Zài nǎlǐ xué?",
+       "a": "e9497c030c54"
+      },
+      "ans": {
+       "zh": "我很想學書法，我想週末學，在學校學。",
+       "en": "I really want to learn calligraphy. I'd like to learn on weekends, at school.",
+       "py": "Wǒ hěn xiǎng xué shūfǎ, wǒ xiǎng zhōumò xué, zài xuéxiào xué.",
+       "a": "7ead4a0ee9f7"
+      }
+     }
+    ],
+    "full": "speak_L7_1.mp3"
+   }
+  ]
  }
 ];

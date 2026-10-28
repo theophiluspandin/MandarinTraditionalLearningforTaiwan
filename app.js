@@ -11,7 +11,7 @@
     get(k, d) { try { const v = localStorage.getItem('ml_' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
     set(k, v) { try { localStorage.setItem('ml_' + k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } }
   };
-  const prefs = Object.assign({ theme: null, py: true, en: true, zh: true, speed: 1, shadow: false }, store.get('prefs', {}));
+  const prefs = Object.assign({ theme: null, py: true, en: true, zh: true, ans: false, speed: 1, shadow: false, model: true, wait: 0 }, store.get('prefs', {}));
   const done = new Set(store.get('done', []));
   const save = () => store.set('prefs', prefs);
   let role = '';
@@ -29,6 +29,7 @@
     app.classList.toggle('hide-py', !prefs.py);
     app.classList.toggle('hide-en', !prefs.en);
     app.classList.toggle('hide-zh', !prefs.zh);
+    app.classList.toggle('hide-ans', !prefs.ans);
     $$('[data-vis]').forEach(b => b.setAttribute('aria-pressed', prefs[b.dataset.vis]));
   }
   $('#t-theme').onclick = () => { prefs.theme = isDark() ? 'light' : 'dark'; save(); applyChrome(); };
@@ -36,6 +37,8 @@
   document.addEventListener('click', e => {
     const hint = e.target.closest('.py, .en, .zh');
     if (hint && $('#app').contains(hint)) hint.classList.add('reveal');
+    const ans = e.target.closest('.ans');
+    if (ans && !e.target.closest('.play')) ans.classList.add('reveal');
     const vis = e.target.closest('[data-vis]');
     if (vis) { prefs[vis.dataset.vis] = !prefs[vis.dataset.vis]; save(); $$('.reveal').forEach(x => x.classList.remove('reveal')); applyChrome(); }
   });
@@ -129,8 +132,10 @@
           <span class="${ok === nd ? 'done' : ''}">${ok}/${nd} listened${ok === nd ? ' ✓' : ''}</span></div></a>`;
       }).join('')}</div>
       <h2>Practice</h2>
+      <div class="grid"><a class="card" href="#/speak"><div class="t-zh" style="font-size:20px">會話練習 Conversation training</div>
+      <div class="t-en">The teacher asks a question, you answer aloud, then hear a model answer — ${LESSONS.reduce((a, L) => a + (L.speak || []).reduce((b, s) => b + s.items.length, 0), 0)} questions for lessons 1–7.</div></a>
       <a class="card" href="#/practice"><div class="t-zh" style="font-size:20px">聽力練習 Listening &amp; flashcards</div>
-      <div class="t-en">Hear a word or sentence and pick the meaning, or drill with flashcards — across all lessons 1–7.</div></a>`;
+      <div class="t-en">Hear a word or sentence and pick the meaning, or drill with flashcards — across all lessons 1–7.</div></a></div>`;
     applyChrome();
   }
 
@@ -138,7 +143,8 @@
     const L = LESSONS.find(l => l.n === n);
     if (!L) return home();
     document.title = `Lesson ${n} · ${L.en}`;
-    const tabs = [].concat(L.dialogues.map((d, i) => ['d' + (i + 1), d.title]), L.vocab.map((v, i) => ['v' + (i + 1), v.title]), [['practice', 'Practice']]);
+    const tabs = [].concat(L.dialogues.map((d, i) => ['d' + (i + 1), d.title]), L.vocab.map((v, i) => ['v' + (i + 1), v.title]),
+      L.speak && L.speak.length ? [['speak', '會話練習 Speaking']] : [], [['practice', 'Practice']]);
     if (!tabs.some(t => t[0] === tab)) tab = 'd1';
     app.innerHTML = `<div class="crumbs"><a href="#/">← All lessons</a></div>
       <h1><span class="zh">${esc(L.zh)}</span></h1><p class="sub">Lesson ${n} · ${esc(L.en)} · ${esc(L.topic)}</p>
@@ -147,6 +153,7 @@
     const body = $('#body');
     if (tab[0] === 'd') dialogueView(body, L, +tab.slice(1) - 1);
     else if (tab[0] === 'v') vocabView(body, L, +tab.slice(1) - 1);
+    else if (tab === 'speak') speakView(body, L);
     else practiceView(body, n);
     applyChrome();
   }
@@ -204,6 +211,95 @@
       row.classList.add('playing');
       await playClip(grp.items[+b.dataset.one].a);
       if (my === token) row.classList.remove('playing');
+    };
+  }
+
+  /* ---------- conversation training ---------- */
+  let skipWait = null;
+  function waitTurn(ms, label) {
+    const my = token, end = Date.now() + ms;
+    return new Promise(res => {
+      skipWait = () => { clearInterval(t); skipWait = null; res(); };
+      const tick = () => {
+        const left = Math.ceil((end - Date.now()) / 1000);
+        if (my !== token) { clearInterval(t); skipWait = null; return res(); }
+        if (left <= 0) return skipWait();
+        status(`${label} (${left}s) — press “Next ›” when you're done.`);
+      };
+      const t = setInterval(tick, 250); tick();
+    });
+  }
+  const answerTime = p => prefs.wait ? prefs.wait * 1000 : Math.max(5000, 3000 + (p ? p.zh.length : 6) * 450);
+
+  async function runTraining(sets, si, start) {
+    stopAll();
+    const my = token, st = sets[si];
+    $('#next').disabled = false;
+    uiBusy = on => { const n = $('#next'); if (n) n.disabled = !on; };
+    for (let i = start; i < st.items.length; i++) {
+      const it = st.items[i], el = $(`.qa[data-s="${si}"][data-i="${i}"]`);
+      el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      el.classList.add('playing');
+      status('Listen to the question…');
+      const ok = await playClip(it.q.a);
+      if (my !== token) return;
+      if (!ok) { el.classList.remove('playing'); status('Audio failed to load. If you opened index.html as a file, serve the folder over http (see README).'); return; }
+      el.classList.remove('playing'); el.classList.add('turn');
+      await waitTurn(answerTime(it.ans), it.ans ? 'Your turn: answer aloud' : 'Your turn: repeat it');
+      el.classList.remove('turn');
+      if (my !== token) return;
+      if (it.ans && prefs.model) {
+        const box = $('.ans', el); box.classList.add('reveal', 'playing');
+        status('Model answer:');
+        await playClip(it.ans.a);
+        box.classList.remove('playing');
+        if (my !== token) return;
+      }
+      await sleep(600);
+      if (my !== token) return;
+    }
+    done.add(sets.key + ':s' + si); store.set('done', Array.from(done));
+    if (uiBusy) { uiBusy(false); uiBusy = null; }
+    status('Finished ✓ Great work!');
+  }
+
+  function speakView(body, L) {
+    const sets = L.speak; sets.key = L.n;
+    const line = (p, cls, label) => `<div class="${cls}"><div class="bubble-row"><div style="flex:1">
+      ${label ? `<div class="spk">${label}</div>` : ''}<div class="zh">${esc(p.zh)}</div><div class="py">${esc(p.py)}</div><div class="en">${esc(p.en)}</div></div>
+      <button class="play" data-a="${p.a}" title="Play" aria-label="Play">▶</button></div></div>`;
+    body.innerHTML = `<p class="sub">The teacher asks each question. Answer aloud in the pause, then compare with the model answer.
+      The model answers are only examples — change them to describe your own life.</p>
+      <div class="toolbar">${speedSel()}
+        <label>Answer time <select id="wait">${[[0, 'Auto'], [5, '5 s'], [8, '8 s'], [12, '12 s'], [20, '20 s']].map(([v, t]) => `<option value="${v}" ${v === prefs.wait ? 'selected' : ''}>${t}</option>`).join('')}</select></label>
+        <label><input type="checkbox" id="model" ${prefs.model ? 'checked' : ''}> Play model answer after my turn</label>
+        <span class="sp"></span><button class="btn ghost" id="stop">■ Stop</button><button class="btn" id="next" disabled>Next ›</button></div>
+      <div class="toolbar" aria-label="Display options"><span style="color:var(--muted);font-size:14px">Show:</span>
+        <button class="chip" data-vis="py">Pinyin</button><button class="chip" data-vis="en">English</button><button class="chip" data-vis="ans">Model answers</button>
+        <span style="color:var(--muted);font-size:13px">Hidden text is blurred — click it to reveal.</span></div>
+      <div id="status" class="sub" role="status"></div>
+      ${sets.map((st, si) => `<h2>${esc(st.title)}${done.has(L.n + ':s' + si) ? ' <span class="done" style="font-size:14px">✓ done</span>' : ''}</h2>
+        <div class="toolbar"><button class="btn" data-start="${si}">▶ Start training</button>
+        <span class="sp"></span><a class="chip" href="audio/${st.full}" download="Lesson${L.n}-speaking-${si + 1}.mp3" style="text-decoration:none">⬇ mp3 (questions + answers)</a></div>
+        <ol class="qlist">${st.items.map((it, i) => `<li class="qa" data-s="${si}" data-i="${i}">
+          <div class="qn">${i + 1}</div><div class="qbody">${line(it.q, 'q', '')}${it.ans ? line(it.ans, 'ans', 'Model answer · click to reveal') : ''}
+          <div class="qtools"><button class="chip" data-from="${i}" data-set="${si}">⏭ Train from here</button></div></div></li>`).join('')}</ol>`).join('')}`;
+    bindSpeed();
+    $('#wait').onchange = e => { prefs.wait = +e.target.value; save(); };
+    $('#model').onchange = e => { prefs.model = e.target.checked; save(); };
+    $('#stop').onclick = () => { stopAll(); status(''); };
+    $('#next').onclick = () => {
+      if (skipWait) skipWait();
+      else if (pending) { audio.pause(); const r = pending; pending = null; r(true); }
+    };
+    body.onclick = async e => {
+      const s = e.target.closest('[data-start]'); if (s) return runTraining(sets, +s.dataset.start, 0);
+      const f = e.target.closest('[data-from]'); if (f) return runTraining(sets, +f.dataset.set, +f.dataset.from);
+      const b = e.target.closest('.play[data-a]'); if (!b) return;
+      stopAll();
+      const my = token; b.classList.add('on');
+      await playClip(b.dataset.a);
+      if (my === token) b.classList.remove('on');
     };
   }
 
@@ -288,6 +384,12 @@
       document.title = 'Practice · Mandarin Study';
       app.innerHTML = `<div class="crumbs"><a href="#/">← All lessons</a></div><h1>Practice</h1><div id="body"></div>`;
       practiceView($('#body'), 0); applyChrome();
+    } else if (p[0] === 'speak') {
+      document.title = 'Conversation training · Mandarin Study';
+      const n = +p[1] || 1, ls = LESSONS.filter(l => l.speak && l.speak.length);
+      app.innerHTML = `<div class="crumbs"><a href="#/">← All lessons</a></div><h1>會話練習 Conversation training</h1>
+        <nav class="tabs">${ls.map(l => `<a class="tab ${l.n === n ? 'on' : ''}" href="#/speak/${l.n}">Lesson ${l.n}</a>`).join('')}</nav><div id="body"></div>`;
+      speakView($('#body'), ls.find(l => l.n === n) || ls[0]); applyChrome();
     } else home();
     window.scrollTo(0, 0);
   }
