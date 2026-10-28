@@ -139,12 +139,13 @@
     applyChrome();
   }
 
-  function lessonPage(n, tab) {
+  function lessonPage(n, tab, extra) {
     const L = LESSONS.find(l => l.n === n);
     if (!L) return home();
     document.title = `Lesson ${n} · ${L.en}`;
     const tabs = [].concat(L.dialogues.map((d, i) => ['d' + (i + 1), d.title]), L.vocab.map((v, i) => ['v' + (i + 1), v.title]),
-      L.speak && L.speak.length ? [['speak', '會話練習 Speaking']] : [], [['practice', 'Practice']]);
+      L.speak && L.speak.length ? [['speak', '會話練習 Speaking']] : [], L.chars && L.chars.length ? [['write', '寫字 Writing']] : [],
+      [['practice', 'Practice']]);
     if (!tabs.some(t => t[0] === tab)) tab = 'd1';
     app.innerHTML = `<div class="crumbs"><a href="#/">← All lessons</a></div>
       <h1><span class="zh">${esc(L.zh)}</span></h1><p class="sub">Lesson ${n} · ${esc(L.en)} · ${esc(L.topic)}</p>
@@ -154,6 +155,7 @@
     if (tab[0] === 'd') dialogueView(body, L, +tab.slice(1) - 1);
     else if (tab[0] === 'v') vocabView(body, L, +tab.slice(1) - 1);
     else if (tab === 'speak') speakView(body, L);
+    else if (tab === 'write') writeView(body, L, extra);
     else practiceView(body, n);
     applyChrome();
   }
@@ -198,7 +200,8 @@
       ${visChips()}
       <div class="vlist">${grp.items.map((it, i) => `<div class="v" data-i="${i}" data-s="${esc((it.zh + ' ' + it.py + ' ' + it.en).toLowerCase())}">
         <button class="play" data-one="${i}" title="Play" aria-label="Play ${esc(it.zh)}">▶</button><div class="zh">${esc(it.zh)}</div>
-        <div class="mid"><div class="py">${esc(it.py)}<span class="pos">${esc(it.pos)}</span></div><div class="en">${esc(it.en)}</div></div></div>`).join('')}</div>`;
+        <div class="mid"><div class="py">${esc(it.py)}<span class="pos">${esc(it.pos)}</span></div><div class="en">${esc(it.en)}</div>
+        <div class="wlinks">${Array.from(it.zh).filter(c => CHAR_HOME[c]).map(c => `<a href="#/lesson/${CHAR_HOME[c]}/write/${encodeURIComponent(c)}" title="Stroke order and handwriting for ${esc(c)}">✍ ${esc(c)}</a>`).join('')}</div></div></div>`).join('')}</div>`;
     bindSpeed();
     const rowSel = it => '.v[data-i="' + grp.items.indexOf(it) + '"]';
     $('#playAll').onclick = () => playWords(grp.items, rowSel);
@@ -303,6 +306,76 @@
     };
   }
 
+  /* ---------- writing (stroke order + handwriting) ---------- */
+  const CHAR_HOME = {};
+  LESSONS.forEach(L => (L.chars || []).forEach(ch => { CHAR_HOME[ch.c] = L.n; }));
+  let writer = null;
+
+  function writeView(body, L, pick) {
+    const chars = L.chars;
+    let idx = Math.max(0, chars.findIndex(c => c.c === pick));
+    body.innerHTML = `<p class="sub">The ${chars.length} new characters in this lesson. Watch the stroke order, then write it yourself with your mouse or finger —
+      a wrong stroke is not accepted, and after 3 misses the next stroke flashes as a hint.</p>
+      <div class="chargrid">${chars.map((c, i) => `<button class="cg zh ${done.has('w:' + c.c) ? 'ok' : ''}" data-i="${i}" aria-label="${esc(c.c)} ${esc(c.py)}">${esc(c.c)}</button>`).join('')}</div>
+      <div class="writepanel"><div><div id="hw" class="hw"></div>
+        <div class="wbtns"><button class="btn ghost" id="prev" aria-label="Previous character">‹</button><button class="btn" id="anim">▶ Stroke order</button>
+        <button class="btn" id="quiz">✍ Write it</button><button class="btn ghost" id="nextc" aria-label="Next character">›</button></div>
+        <label class="wopt"><input type="checkbox" id="outline" ${prefs.outline !== false ? 'checked' : ''}> Show grey outline while writing</label></div>
+        <div class="winfo" id="winfo"></div></div>`;
+    const show = i => {
+      idx = (i + chars.length) % chars.length;
+      const ch = chars[idx];
+      history.replaceState(null, '', `#/lesson/${L.n}/write/${encodeURIComponent(ch.c)}`);
+      $$('.cg', body).forEach((b, k) => b.classList.toggle('on', k === idx));
+      $('#winfo').innerHTML = `<div class="bigpy py">${esc(ch.py)}</div><div id="wstat" class="sub" role="status">Loading strokes…</div>
+        <div class="spk" style="margin-top:10px">Words with ${esc(ch.c)}</div>
+        ${ch.w.map(w => `<div class="wword"><button class="play" data-a="${w.a}" aria-label="Play ${esc(w.zh)}">▶</button><div><span class="zh">${esc(w.zh)}</span>
+          <span class="py"> ${esc(w.py)}</span><div class="en">${esc(w.en)}</div></div></div>`).join('')}`;
+      const box = $('#hw'), size = Math.min(300, body.clientWidth - 24);
+      box.innerHTML = ''; box.style.width = box.style.height = size + 'px';
+      if (!window.HanziWriter) { $('#wstat').textContent = 'Stroke data needs an internet connection (Hanzi Writer library failed to load).'; return; }
+      const css = getComputedStyle(document.documentElement), col = v => css.getPropertyValue(v).trim();
+      writer = HanziWriter.create(box, ch.c, {
+        width: size, height: size, padding: 12, showOutline: true, showCharacter: false,
+        strokeColor: col('--ink'), outlineColor: col('--line'), drawingColor: col('--accent'), highlightColor: col('--ok'),
+        radicalColor: null, strokeAnimationSpeed: 1, delayBetweenStrokes: 250, drawingWidth: 6,
+        onLoadCharDataSuccess: d => { const s = $('#wstat'); if (s) s.textContent = d.strokes.length + ' strokes'; },
+        onLoadCharDataError: () => { const s = $('#wstat'); if (s) s.textContent = 'Could not load stroke data (needs internet).'; }
+      });
+      writer.showCharacter();
+    };
+    const quiz = () => {
+      const ch = chars[idx], w = writer; if (!w) return;
+      const stat = m => { const s = $('#wstat'); if (s) s.textContent = m; };
+      w.hideCharacter();
+      if ($('#outline').checked) w.showOutline(); else w.hideOutline();
+      stat('Write the first stroke…');
+      w.quiz({
+        showHintAfterMisses: 3, highlightOnComplete: true,
+        onCorrectStroke: d => stat(`Stroke ${d.strokeNum + 1} of ${d.strokeNum + 1 + d.strokesRemaining} ✓`),
+        onMistake: d => stat(`Not quite — try stroke ${d.strokeNum + 1} again${d.mistakesOnStroke >= 3 ? ' (follow the hint)' : ''}.`),
+        onComplete: d => {
+          stat(d.totalMistakes ? `Done with ${d.totalMistakes} mistake${d.totalMistakes > 1 ? 's' : ''}. Try again or press › for the next one.` : 'Perfect! ✓ Press › for the next character.');
+          done.add('w:' + ch.c); store.set('done', Array.from(done));
+          const b = $(`.cg[data-i="${idx}"]`, body); if (b) b.classList.add('ok');
+          if (w === writer && ch.w[0]) { stopAll(); playClip(ch.w[0].a); }
+        }
+      });
+    };
+    $('#anim').onclick = () => { if (!writer) return; writer.cancelQuiz(); writer.showOutline(); writer.hideCharacter(); writer.animateCharacter(); };
+    $('#quiz').onclick = quiz;
+    $('#prev').onclick = () => show(idx - 1);
+    $('#nextc').onclick = () => show(idx + 1);
+    $('#outline').onchange = e => { prefs.outline = e.target.checked; save(); quiz(); };
+    body.onclick = async e => {
+      const g = e.target.closest('.cg'); if (g) return show(+g.dataset.i);
+      const b = e.target.closest('.play[data-a]'); if (!b) return;
+      stopAll(); const my = token; b.classList.add('on');
+      await playClip(b.dataset.a); if (my === token) b.classList.remove('on');
+    };
+    show(idx);
+  }
+
   /* ---------- practice ---------- */
   function pools(scope) {
     const ls = scope === 'all' ? LESSONS : LESSONS.filter(l => l.n === +scope);
@@ -379,7 +452,7 @@
   function route() {
     stopAll();
     const p = location.hash.replace(/^#\/?/, '').split('/');
-    if (p[0] === 'lesson') lessonPage(+p[1], p[2] || 'd1');
+    if (p[0] === 'lesson') lessonPage(+p[1], p[2] || 'd1', p[3] && decodeURIComponent(p[3]));
     else if (p[0] === 'practice') {
       document.title = 'Practice · Mandarin Study';
       app.innerHTML = `<div class="crumbs"><a href="#/">← All lessons</a></div><h1>Practice</h1><div id="body"></div>`;

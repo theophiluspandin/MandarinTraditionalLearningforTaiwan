@@ -11,6 +11,9 @@ listening practice and flashcards. No build step is needed to host it.
 - **Conversation training (會話練習)** for every lesson: the teacher voice asks a question, you answer aloud
   during a timed pause, then a model answer plays. All questions and answers have pinyin, English and audio,
   plus a downloadable mp3 per set. Questions live in `../work/data/questions.txt`.
+- **Writing (寫字)**: every new character of each lesson (278 in total) with animated stroke order and a
+  handwriting pad that checks each stroke (mouse or finger), powered by [Hanzi Writer](https://hanziwriter.org)
+  loaded from jsDelivr. Vocabulary rows link to each character (✍).
 - Chinese / pinyin / English can each be hidden (blurred) and revealed on click; "Hide all hints" in the header.
 - Listening quizzes, meaning → characters quiz, sentence-translation quiz and flashcards.
 - Dark mode; progress ("listened") is kept in your browser's localStorage.

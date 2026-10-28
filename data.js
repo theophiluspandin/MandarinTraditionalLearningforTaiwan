@@ -565,6 +565,770 @@ window.LESSONS = [
     ],
     "full": "speak_L1_1.mp3"
    }
+  ],
+  "chars": [
+   {
+    "c": "陳",
+    "py": "chén",
+    "w": [
+     {
+      "zh": "陳月美",
+      "py": "Chén Yuèměi",
+      "en": "a woman from Vietnam",
+      "a": "d468155f2c1d"
+     }
+    ]
+   },
+   {
+    "c": "月",
+    "py": "yuè",
+    "w": [
+     {
+      "zh": "陳月美",
+      "py": "Chén Yuèměi",
+      "en": "a woman from Vietnam",
+      "a": "d468155f2c1d"
+     }
+    ]
+   },
+   {
+    "c": "美",
+    "py": "měi",
+    "w": [
+     {
+      "zh": "陳月美",
+      "py": "Chén Yuèměi",
+      "en": "a woman from Vietnam",
+      "a": "d468155f2c1d"
+     },
+     {
+      "zh": "美國",
+      "py": "Měiguó",
+      "en": "America",
+      "a": "1fbcf5cb25f6"
+     }
+    ]
+   },
+   {
+    "c": "李",
+    "py": "lǐ",
+    "w": [
+     {
+      "zh": "李明華",
+      "py": "Lǐ Mínghuá",
+      "en": "a man from Taiwan",
+      "a": "9d86286ea852"
+     }
+    ]
+   },
+   {
+    "c": "明",
+    "py": "míng",
+    "w": [
+     {
+      "zh": "李明華",
+      "py": "Lǐ Mínghuá",
+      "en": "a man from Taiwan",
+      "a": "9d86286ea852"
+     }
+    ]
+   },
+   {
+    "c": "華",
+    "py": "huá",
+    "w": [
+     {
+      "zh": "李明華",
+      "py": "Lǐ Mínghuá",
+      "en": "a man from Taiwan",
+      "a": "9d86286ea852"
+     }
+    ]
+   },
+   {
+    "c": "王",
+    "py": "wáng",
+    "w": [
+     {
+      "zh": "王開文",
+      "py": "Wáng Kāiwén",
+      "en": "a man from the US",
+      "a": "c47470d555f4"
+     }
+    ]
+   },
+   {
+    "c": "開",
+    "py": "kāi",
+    "w": [
+     {
+      "zh": "王開文",
+      "py": "Wáng Kāiwén",
+      "en": "a man from the US",
+      "a": "c47470d555f4"
+     }
+    ]
+   },
+   {
+    "c": "文",
+    "py": "wén",
+    "w": [
+     {
+      "zh": "王開文",
+      "py": "Wáng Kāiwén",
+      "en": "a man from the US",
+      "a": "c47470d555f4"
+     }
+    ]
+   },
+   {
+    "c": "你",
+    "py": "nǐ",
+    "w": [
+     {
+      "zh": "你",
+      "py": "nǐ",
+      "en": "you",
+      "a": "aef3ed2fe623"
+     },
+     {
+      "zh": "你們",
+      "py": "nǐmen",
+      "en": "you (plural)",
+      "a": "be0ea67b5f84"
+     },
+     {
+      "zh": "你好",
+      "py": "nǐ hǎo",
+      "en": "How are you? / Hello.",
+      "a": "9b9b44e32457"
+     }
+    ]
+   },
+   {
+    "c": "來",
+    "py": "lái",
+    "w": [
+     {
+      "zh": "來",
+      "py": "lái",
+      "en": "to come",
+      "a": "b93f042505f8"
+     }
+    ]
+   },
+   {
+    "c": "是",
+    "py": "shì",
+    "w": [
+     {
+      "zh": "是",
+      "py": "shì",
+      "en": "to be",
+      "a": "6beaf71f3cde"
+     },
+     {
+      "zh": "是的",
+      "py": "shìde",
+      "en": "yes",
+      "a": "75a0f1657c6c"
+     }
+    ]
+   },
+   {
+    "c": "小",
+    "py": "xiǎo",
+    "w": [
+     {
+      "zh": "小姐",
+      "py": "xiǎojiě",
+      "en": "Miss, Ms.",
+      "a": "fde7478f76ba"
+     }
+    ]
+   },
+   {
+    "c": "姐",
+    "py": "jie",
+    "w": [
+     {
+      "zh": "小姐",
+      "py": "xiǎojiě",
+      "en": "Miss, Ms.",
+      "a": "fde7478f76ba"
+     }
+    ]
+   },
+   {
+    "c": "嗎",
+    "py": "ma",
+    "w": [
+     {
+      "zh": "嗎",
+      "py": "ma",
+      "en": "sentence final particle",
+      "a": "9ada58f513a6"
+     }
+    ]
+   },
+   {
+    "c": "接",
+    "py": "jiē",
+    "w": [
+     {
+      "zh": "接",
+      "py": "jiē",
+      "en": "to pick sb up",
+      "a": "778f75de7cdc"
+     }
+    ]
+   },
+   {
+    "c": "我",
+    "py": "wǒ",
+    "w": [
+     {
+      "zh": "我們",
+      "py": "wǒmen",
+      "en": "we, us",
+      "a": "12b83d635293"
+     },
+     {
+      "zh": "我",
+      "py": "wǒ",
+      "en": "I, me",
+      "a": "1e5172effb73"
+     }
+    ]
+   },
+   {
+    "c": "們",
+    "py": "men",
+    "w": [
+     {
+      "zh": "我們",
+      "py": "wǒmen",
+      "en": "we, us",
+      "a": "12b83d635293"
+     },
+     {
+      "zh": "你們",
+      "py": "nǐmen",
+      "en": "you (plural)",
+      "a": "be0ea67b5f84"
+     }
+    ]
+   },
+   {
+    "c": "這",
+    "py": "zhè",
+    "w": [
+     {
+      "zh": "這",
+      "py": "zhè / zhèi",
+      "en": "this",
+      "a": "4f8075e92f46"
+     }
+    ]
+   },
+   {
+    "c": "先",
+    "py": "xiān",
+    "w": [
+     {
+      "zh": "先生",
+      "py": "xiānsheng",
+      "en": "Mr.",
+      "a": "f3033433a479"
+     }
+    ]
+   },
+   {
+    "c": "生",
+    "py": "sheng",
+    "w": [
+     {
+      "zh": "先生",
+      "py": "xiānsheng",
+      "en": "Mr.",
+      "a": "f3033433a479"
+     }
+    ]
+   },
+   {
+    "c": "好",
+    "py": "hǎo",
+    "w": [
+     {
+      "zh": "好",
+      "py": "hǎo",
+      "en": "fine, well",
+      "a": "d86e220b5922"
+     },
+     {
+      "zh": "你好",
+      "py": "nǐ hǎo",
+      "en": "How are you? / Hello.",
+      "a": "9b9b44e32457"
+     },
+     {
+      "zh": "好喝",
+      "py": "hǎohē",
+      "en": "(lit. good to drink) to taste good",
+      "a": "c5263d7430da"
+     }
+    ]
+   },
+   {
+    "c": "姓",
+    "py": "xìng",
+    "w": [
+     {
+      "zh": "姓",
+      "py": "xìng",
+      "en": "to be surnamed",
+      "a": "74af3144ad4d"
+     }
+    ]
+   },
+   {
+    "c": "叫",
+    "py": "jiào",
+    "w": [
+     {
+      "zh": "叫",
+      "py": "jiào",
+      "en": "to be called, i.e., to have the first name xx",
+      "a": "d0f8572d9aac"
+     }
+    ]
+   },
+   {
+    "c": "臺",
+    "py": "tái",
+    "w": [
+     {
+      "zh": "臺灣",
+      "py": "Táiwān",
+      "en": "Taiwan",
+      "a": "8da98217c275"
+     }
+    ]
+   },
+   {
+    "c": "灣",
+    "py": "wān",
+    "w": [
+     {
+      "zh": "臺灣",
+      "py": "Táiwān",
+      "en": "Taiwan",
+      "a": "8da98217c275"
+     }
+    ]
+   },
+   {
+    "c": "歡",
+    "py": "huān",
+    "w": [
+     {
+      "zh": "歡迎",
+      "py": "huānyíng",
+      "en": "welcome",
+      "a": "6e7967c4c6f4"
+     },
+     {
+      "zh": "喜歡",
+      "py": "xǐhuān",
+      "en": "to like",
+      "a": "25bf41dd16db"
+     }
+    ]
+   },
+   {
+    "c": "迎",
+    "py": "yíng",
+    "w": [
+     {
+      "zh": "歡迎",
+      "py": "huānyíng",
+      "en": "welcome",
+      "a": "6e7967c4c6f4"
+     }
+    ]
+   },
+   {
+    "c": "請",
+    "py": "qǐng",
+    "w": [
+     {
+      "zh": "請問",
+      "py": "qǐngwèn",
+      "en": "May I ask you... / Excuse me,...",
+      "a": "634fd5779aac"
+     },
+     {
+      "zh": "請",
+      "py": "qǐng",
+      "en": "please",
+      "a": "eb14758a1091"
+     }
+    ]
+   },
+   {
+    "c": "問",
+    "py": "wèn",
+    "w": [
+     {
+      "zh": "請問",
+      "py": "qǐngwèn",
+      "en": "May I ask you... / Excuse me,...",
+      "a": "634fd5779aac"
+     }
+    ]
+   },
+   {
+    "c": "的",
+    "py": "de",
+    "w": [
+     {
+      "zh": "是的",
+      "py": "shìde",
+      "en": "yes",
+      "a": "75a0f1657c6c"
+     }
+    ]
+   },
+   {
+    "c": "謝",
+    "py": "xiè",
+    "w": [
+     {
+      "zh": "謝謝",
+      "py": "xièxie",
+      "en": "Thank you.",
+      "a": "7768a8d32e57"
+     },
+     {
+      "zh": "謝謝",
+      "py": "xièxie",
+      "en": "Thank you.",
+      "a": "7768a8d32e57"
+     }
+    ]
+   },
+   {
+    "c": "不",
+    "py": "bù",
+    "w": [
+     {
+      "zh": "不客氣",
+      "py": "búkèqì",
+      "en": "You're welcome.",
+      "a": "c39f6e4fa0b4"
+     },
+     {
+      "zh": "不",
+      "py": "bù",
+      "en": "not",
+      "a": "fccc83cb2394"
+     },
+     {
+      "zh": "對不起",
+      "py": "duìbùqǐ",
+      "en": "I'm sorry.",
+      "a": "cc3eb9363925"
+     }
+    ]
+   },
+   {
+    "c": "客",
+    "py": "kè",
+    "w": [
+     {
+      "zh": "不客氣",
+      "py": "búkèqì",
+      "en": "You're welcome.",
+      "a": "c39f6e4fa0b4"
+     }
+    ]
+   },
+   {
+    "c": "氣",
+    "py": "qì",
+    "w": [
+     {
+      "zh": "不客氣",
+      "py": "búkèqì",
+      "en": "You're welcome.",
+      "a": "c39f6e4fa0b4"
+     }
+    ]
+   },
+   {
+    "c": "喝",
+    "py": "hē",
+    "w": [
+     {
+      "zh": "喝",
+      "py": "hē",
+      "en": "to drink",
+      "a": "1d76c502958a"
+     },
+     {
+      "zh": "好喝",
+      "py": "hǎohē",
+      "en": "(lit. good to drink) to taste good",
+      "a": "c5263d7430da"
+     }
+    ]
+   },
+   {
+    "c": "茶",
+    "py": "chá",
+    "w": [
+     {
+      "zh": "茶",
+      "py": "chá",
+      "en": "tea",
+      "a": "e92e0b966104"
+     },
+     {
+      "zh": "烏龍茶",
+      "py": "Wūlóng chá",
+      "en": "Oolong tea",
+      "a": "2cced4cda288"
+     }
+    ]
+   },
+   {
+    "c": "很",
+    "py": "hěn",
+    "w": [
+     {
+      "zh": "很",
+      "py": "hěn",
+      "en": "very",
+      "a": "db3ee74c14bd"
+     }
+    ]
+   },
+   {
+    "c": "什",
+    "py": "shén",
+    "w": [
+     {
+      "zh": "什麼",
+      "py": "shénme",
+      "en": "what",
+      "a": "3515539cc79b"
+     }
+    ]
+   },
+   {
+    "c": "麼",
+    "py": "me",
+    "w": [
+     {
+      "zh": "什麼",
+      "py": "shénme",
+      "en": "what",
+      "a": "3515539cc79b"
+     }
+    ]
+   },
+   {
+    "c": "人",
+    "py": "rén",
+    "w": [
+     {
+      "zh": "人",
+      "py": "rén",
+      "en": "person, people",
+      "a": "08b55f5a7fd2"
+     }
+    ]
+   },
+   {
+    "c": "喜",
+    "py": "xǐ",
+    "w": [
+     {
+      "zh": "喜歡",
+      "py": "xǐhuān",
+      "en": "to like",
+      "a": "25bf41dd16db"
+     }
+    ]
+   },
+   {
+    "c": "呢",
+    "py": "ne",
+    "w": [
+     {
+      "zh": "呢",
+      "py": "ne",
+      "en": "sentence final particle",
+      "a": "8315d8e49c7e"
+     }
+    ]
+   },
+   {
+    "c": "他",
+    "py": "tā",
+    "w": [
+     {
+      "zh": "他",
+      "py": "tā",
+      "en": "he, him",
+      "a": "40084c72fa8b"
+     }
+    ]
+   },
+   {
+    "c": "哪",
+    "py": "nǎ",
+    "w": [
+     {
+      "zh": "哪",
+      "py": "nǎ / něi",
+      "en": "which",
+      "a": "39a868a9c17b"
+     },
+     {
+      "zh": "哪國",
+      "py": "nǎ guó / něi guó",
+      "en": "Which country?",
+      "a": "1dcc53f0d26c"
+     }
+    ]
+   },
+   {
+    "c": "要",
+    "py": "yào",
+    "w": [
+     {
+      "zh": "要",
+      "py": "yào",
+      "en": "to want to",
+      "a": "dd67b33b6349"
+     }
+    ]
+   },
+   {
+    "c": "咖",
+    "py": "kā",
+    "w": [
+     {
+      "zh": "咖啡",
+      "py": "kāfēi",
+      "en": "coffee",
+      "a": "fe0e8288de3c"
+     }
+    ]
+   },
+   {
+    "c": "啡",
+    "py": "fēi",
+    "w": [
+     {
+      "zh": "咖啡",
+      "py": "kāfēi",
+      "en": "coffee",
+      "a": "fe0e8288de3c"
+     }
+    ]
+   },
+   {
+    "c": "烏",
+    "py": "wū",
+    "w": [
+     {
+      "zh": "烏龍茶",
+      "py": "Wūlóng chá",
+      "en": "Oolong tea",
+      "a": "2cced4cda288"
+     }
+    ]
+   },
+   {
+    "c": "龍",
+    "py": "lóng",
+    "w": [
+     {
+      "zh": "烏龍茶",
+      "py": "Wūlóng chá",
+      "en": "Oolong tea",
+      "a": "2cced4cda288"
+     }
+    ]
+   },
+   {
+    "c": "日",
+    "py": "rì",
+    "w": [
+     {
+      "zh": "日本",
+      "py": "Rìběn",
+      "en": "Japan",
+      "a": "298191474a9c"
+     }
+    ]
+   },
+   {
+    "c": "本",
+    "py": "běn",
+    "w": [
+     {
+      "zh": "日本",
+      "py": "Rìběn",
+      "en": "Japan",
+      "a": "298191474a9c"
+     }
+    ]
+   },
+   {
+    "c": "國",
+    "py": "guó",
+    "w": [
+     {
+      "zh": "美國",
+      "py": "Měiguó",
+      "en": "America",
+      "a": "1fbcf5cb25f6"
+     },
+     {
+      "zh": "哪國",
+      "py": "nǎ guó / něi guó",
+      "en": "Which country?",
+      "a": "1dcc53f0d26c"
+     }
+    ]
+   },
+   {
+    "c": "對",
+    "py": "duì",
+    "w": [
+     {
+      "zh": "對不起",
+      "py": "duìbùqǐ",
+      "en": "I'm sorry.",
+      "a": "cc3eb9363925"
+     }
+    ]
+   },
+   {
+    "c": "起",
+    "py": "qǐ",
+    "w": [
+     {
+      "zh": "對不起",
+      "py": "duìbùqǐ",
+      "en": "I'm sorry.",
+      "a": "cc3eb9363925"
+     }
+    ]
+   }
   ]
  },
  {
@@ -1121,6 +1885,596 @@ window.LESSONS = [
      }
     ],
     "full": "speak_L2_1.mp3"
+   }
+  ],
+  "chars": [
+   {
+    "c": "張",
+    "py": "zhāng",
+    "w": [
+     {
+      "zh": "張怡君",
+      "py": "Zhāng Yíjūn",
+      "en": "a woman from Taiwan",
+      "a": "4ca4317e56b5"
+     },
+     {
+      "zh": "張",
+      "py": "zhāng",
+      "en": "measure word for flat objects (e.g., paper, tickets)",
+      "a": "c610398562cc"
+     }
+    ]
+   },
+   {
+    "c": "怡",
+    "py": "yí",
+    "w": [
+     {
+      "zh": "張怡君",
+      "py": "Zhāng Yíjūn",
+      "en": "a woman from Taiwan",
+      "a": "4ca4317e56b5"
+     }
+    ]
+   },
+   {
+    "c": "君",
+    "py": "jūn",
+    "w": [
+     {
+      "zh": "張怡君",
+      "py": "Zhāng Yíjūn",
+      "en": "a woman from Taiwan",
+      "a": "4ca4317e56b5"
+     }
+    ]
+   },
+   {
+    "c": "馬",
+    "py": "mǎ",
+    "w": [
+     {
+      "zh": "馬安同",
+      "py": "Mǎ Āntóng",
+      "en": "a man from the Republic of Honduras",
+      "a": "f21fa9eb6831"
+     }
+    ]
+   },
+   {
+    "c": "安",
+    "py": "ān",
+    "w": [
+     {
+      "zh": "馬安同",
+      "py": "Mǎ Āntóng",
+      "en": "a man from the Republic of Honduras",
+      "a": "f21fa9eb6831"
+     }
+    ]
+   },
+   {
+    "c": "同",
+    "py": "tóng",
+    "w": [
+     {
+      "zh": "馬安同",
+      "py": "Mǎ Āntóng",
+      "en": "a man from the Republic of Honduras",
+      "a": "f21fa9eb6831"
+     }
+    ]
+   },
+   {
+    "c": "家",
+    "py": "jiā",
+    "w": [
+     {
+      "zh": "家人",
+      "py": "jiārén",
+      "en": "family (members)",
+      "a": "4769b24038d0"
+     },
+     {
+      "zh": "家",
+      "py": "jiā",
+      "en": "home, house",
+      "a": "2b23cb874f66"
+     }
+    ]
+   },
+   {
+    "c": "漂",
+    "py": "piào",
+    "w": [
+     {
+      "zh": "漂亮",
+      "py": "piàoliàng",
+      "en": "pretty",
+      "a": "75413fe6bff2"
+     }
+    ]
+   },
+   {
+    "c": "亮",
+    "py": "liang",
+    "w": [
+     {
+      "zh": "漂亮",
+      "py": "piàoliàng",
+      "en": "pretty",
+      "a": "75413fe6bff2"
+     }
+    ]
+   },
+   {
+    "c": "房",
+    "py": "fáng",
+    "w": [
+     {
+      "zh": "房子",
+      "py": "fángzi",
+      "en": "house",
+      "a": "920606384aad"
+     }
+    ]
+   },
+   {
+    "c": "子",
+    "py": "zi",
+    "w": [
+     {
+      "zh": "房子",
+      "py": "fángzi",
+      "en": "house",
+      "a": "920606384aad"
+     }
+    ]
+   },
+   {
+    "c": "坐",
+    "py": "zuò",
+    "w": [
+     {
+      "zh": "坐",
+      "py": "zuò",
+      "en": "to sit",
+      "a": "16e55ae0f333"
+     }
+    ]
+   },
+   {
+    "c": "有",
+    "py": "yǒu",
+    "w": [
+     {
+      "zh": "有",
+      "py": "yǒu",
+      "en": "to have",
+      "a": "5b5371e11a6a"
+     }
+    ]
+   },
+   {
+    "c": "多",
+    "py": "duō",
+    "w": [
+     {
+      "zh": "多",
+      "py": "duō",
+      "en": "many",
+      "a": "77c58566f6ab"
+     }
+    ]
+   },
+   {
+    "c": "照",
+    "py": "zhào",
+    "w": [
+     {
+      "zh": "照片",
+      "py": "zhàopiàn",
+      "en": "photo",
+      "a": "ca76b3d08e7b"
+     },
+     {
+      "zh": "照相",
+      "py": "zhàoxiàng",
+      "en": "to take a photo",
+      "a": "6bd5c89271e3"
+     }
+    ]
+   },
+   {
+    "c": "片",
+    "py": "piān",
+    "w": [
+     {
+      "zh": "照片",
+      "py": "zhàopiàn",
+      "en": "photo",
+      "a": "ca76b3d08e7b"
+     }
+    ]
+   },
+   {
+    "c": "都",
+    "py": "dōu",
+    "w": [
+     {
+      "zh": "都",
+      "py": "dōu",
+      "en": "all, both",
+      "a": "baa21d39f832"
+     }
+    ]
+   },
+   {
+    "c": "相",
+    "py": "xiàng",
+    "w": [
+     {
+      "zh": "照相",
+      "py": "zhàoxiàng",
+      "en": "to take a photo",
+      "a": "6bd5c89271e3"
+     }
+    ]
+   },
+   {
+    "c": "看",
+    "py": "kàn",
+    "w": [
+     {
+      "zh": "好看",
+      "py": "hǎokàn",
+      "en": "good-looking",
+      "a": "3b0f08676cef"
+     },
+     {
+      "zh": "看書",
+      "py": "kànshū",
+      "en": "to read",
+      "a": "1d96468623f4"
+     }
+    ]
+   },
+   {
+    "c": "誰",
+    "py": "shuí",
+    "w": [
+     {
+      "zh": "誰",
+      "py": "shéi",
+      "en": "who",
+      "a": "a1f8ed20ee99"
+     }
+    ]
+   },
+   {
+    "c": "妹",
+    "py": "mèi",
+    "w": [
+     {
+      "zh": "妹妹",
+      "py": "mèimei",
+      "en": "younger sister",
+      "a": "652bd1e6f889"
+     },
+     {
+      "zh": "妹妹",
+      "py": "mèimei",
+      "en": "younger sister",
+      "a": "652bd1e6f889"
+     },
+     {
+      "zh": "姐妹",
+      "py": "jiěmèi",
+      "en": "sisters",
+      "a": "067f60b6d0f2"
+     }
+    ]
+   },
+   {
+    "c": "爸",
+    "py": "bà",
+    "w": [
+     {
+      "zh": "爸爸",
+      "py": "bàba",
+      "en": "dad",
+      "a": "61b09eea2acc"
+     },
+     {
+      "zh": "爸爸",
+      "py": "bàba",
+      "en": "dad",
+      "a": "61b09eea2acc"
+     }
+    ]
+   },
+   {
+    "c": "媽",
+    "py": "mā",
+    "w": [
+     {
+      "zh": "媽媽",
+      "py": "māma",
+      "en": "mom",
+      "a": "5bfebcd48e03"
+     },
+     {
+      "zh": "媽媽",
+      "py": "māma",
+      "en": "mom",
+      "a": "5bfebcd48e03"
+     }
+    ]
+   },
+   {
+    "c": "進",
+    "py": "jìn",
+    "w": [
+     {
+      "zh": "請進",
+      "py": "qǐng jìn",
+      "en": "Please come in!",
+      "a": "659e87b4fb7e"
+     }
+    ]
+   },
+   {
+    "c": "田",
+    "py": "tián",
+    "w": [
+     {
+      "zh": "田中誠一",
+      "py": "Tiánzhōng Chéngyī",
+      "en": "a man from Japan",
+      "a": "7e3731be91cf"
+     }
+    ]
+   },
+   {
+    "c": "中",
+    "py": "zhōng",
+    "w": [
+     {
+      "zh": "田中誠一",
+      "py": "Tiánzhōng Chéngyī",
+      "en": "a man from Japan",
+      "a": "7e3731be91cf"
+     }
+    ]
+   },
+   {
+    "c": "誠",
+    "py": "chéng",
+    "w": [
+     {
+      "zh": "田中誠一",
+      "py": "Tiánzhōng Chéngyī",
+      "en": "a man from Japan",
+      "a": "7e3731be91cf"
+     }
+    ]
+   },
+   {
+    "c": "一",
+    "py": "yī",
+    "w": [
+     {
+      "zh": "田中誠一",
+      "py": "Tiánzhōng Chéngyī",
+      "en": "a man from Japan",
+      "a": "7e3731be91cf"
+     }
+    ]
+   },
+   {
+    "c": "伯",
+    "py": "bó",
+    "w": [
+     {
+      "zh": "伯母",
+      "py": "bómǔ",
+      "en": "aunt; a polite term for a friend's mother regardless of age",
+      "a": "a2519d2bb6e9"
+     }
+    ]
+   },
+   {
+    "c": "母",
+    "py": "mǔ",
+    "w": [
+     {
+      "zh": "伯母",
+      "py": "bómǔ",
+      "en": "aunt; a polite term for a friend's mother regardless of age",
+      "a": "a2519d2bb6e9"
+     }
+    ]
+   },
+   {
+    "c": "您",
+    "py": "nín",
+    "w": [
+     {
+      "zh": "您",
+      "py": "nín",
+      "en": "you (honorific)",
+      "a": "4da34c133d36"
+     }
+    ]
+   },
+   {
+    "c": "名",
+    "py": "míng",
+    "w": [
+     {
+      "zh": "名字",
+      "py": "míngzi",
+      "en": "name",
+      "a": "8b92be3ff39a"
+     }
+    ]
+   },
+   {
+    "c": "字",
+    "py": "zi",
+    "w": [
+     {
+      "zh": "名字",
+      "py": "míngzi",
+      "en": "name",
+      "a": "8b92be3ff39a"
+     }
+    ]
+   },
+   {
+    "c": "書",
+    "py": "shū",
+    "w": [
+     {
+      "zh": "書",
+      "py": "shū",
+      "en": "book",
+      "a": "5ab16d2acda8"
+     },
+     {
+      "zh": "看書",
+      "py": "kànshū",
+      "en": "to read",
+      "a": "1d96468623f4"
+     }
+    ]
+   },
+   {
+    "c": "哥",
+    "py": "gē",
+    "w": [
+     {
+      "zh": "哥哥",
+      "py": "gēge",
+      "en": "older brother",
+      "a": "4ce60e268c09"
+     },
+     {
+      "zh": "哥哥",
+      "py": "gēge",
+      "en": "older brother",
+      "a": "4ce60e268c09"
+     }
+    ]
+   },
+   {
+    "c": "老",
+    "py": "lǎo",
+    "w": [
+     {
+      "zh": "老師",
+      "py": "lǎoshī",
+      "en": "teacher",
+      "a": "8a17fb945a9b"
+     }
+    ]
+   },
+   {
+    "c": "師",
+    "py": "shī",
+    "w": [
+     {
+      "zh": "老師",
+      "py": "lǎoshī",
+      "en": "teacher",
+      "a": "8a17fb945a9b"
+     }
+    ]
+   },
+   {
+    "c": "幾",
+    "py": "jǐ",
+    "w": [
+     {
+      "zh": "幾",
+      "py": "jǐ",
+      "en": "how many",
+      "a": "69797b08d91d"
+     }
+    ]
+   },
+   {
+    "c": "個",
+    "py": "ge",
+    "w": [
+     {
+      "zh": "個",
+      "py": "ge",
+      "en": "general measure word",
+      "a": "ab857299b81e"
+     }
+    ]
+   },
+   {
+    "c": "沒",
+    "py": "méi",
+    "w": [
+     {
+      "zh": "沒",
+      "py": "méi",
+      "en": "not",
+      "a": "40cbfcb981bd"
+     }
+    ]
+   },
+   {
+    "c": "兄",
+    "py": "xiōng",
+    "w": [
+     {
+      "zh": "兄弟",
+      "py": "xiōngdì",
+      "en": "brothers",
+      "a": "488ad0375e46"
+     }
+    ]
+   },
+   {
+    "c": "弟",
+    "py": "dì",
+    "w": [
+     {
+      "zh": "兄弟",
+      "py": "xiōngdì",
+      "en": "brothers",
+      "a": "488ad0375e46"
+     }
+    ]
+   },
+   {
+    "c": "五",
+    "py": "wǔ",
+    "w": [
+     {
+      "zh": "五",
+      "py": "wǔ",
+      "en": "five",
+      "a": "7d42f53044c2"
+     }
+    ]
+   },
+   {
+    "c": "兩",
+    "py": "liǎng",
+    "w": [
+     {
+      "zh": "兩",
+      "py": "liǎng",
+      "en": "two",
+      "a": "ff35b291e7ea"
+     }
+    ]
    }
   ]
  },
@@ -1709,6 +3063,638 @@ window.LESSONS = [
     ],
     "full": "speak_L3_1.mp3"
    }
+  ],
+  "chars": [
+   {
+    "c": "週",
+    "py": "zhōu",
+    "w": [
+     {
+      "zh": "週末",
+      "py": "zhōumò",
+      "en": "weekend",
+      "a": "5932ad722b37"
+     }
+    ]
+   },
+   {
+    "c": "末",
+    "py": "mò",
+    "w": [
+     {
+      "zh": "週末",
+      "py": "zhōumò",
+      "en": "weekend",
+      "a": "5932ad722b37"
+     }
+    ]
+   },
+   {
+    "c": "聽",
+    "py": "tīng",
+    "w": [
+     {
+      "zh": "聽",
+      "py": "tīng",
+      "en": "to listen",
+      "a": "d7c6f22392f1"
+     }
+    ]
+   },
+   {
+    "c": "音",
+    "py": "yīn",
+    "w": [
+     {
+      "zh": "音樂",
+      "py": "yīnyuè",
+      "en": "music",
+      "a": "b9fa8bc2e0af"
+     }
+    ]
+   },
+   {
+    "c": "樂",
+    "py": "lè",
+    "w": [
+     {
+      "zh": "音樂",
+      "py": "yīnyuè",
+      "en": "music",
+      "a": "b9fa8bc2e0af"
+     }
+    ]
+   },
+   {
+    "c": "運",
+    "py": "yùn",
+    "w": [
+     {
+      "zh": "運動",
+      "py": "yùndòng",
+      "en": "to exercise",
+      "a": "d2c7b757d8db"
+     }
+    ]
+   },
+   {
+    "c": "動",
+    "py": "dòng",
+    "w": [
+     {
+      "zh": "運動",
+      "py": "yùndòng",
+      "en": "to exercise",
+      "a": "d2c7b757d8db"
+     }
+    ]
+   },
+   {
+    "c": "打",
+    "py": "dǎ",
+    "w": [
+     {
+      "zh": "打",
+      "py": "dǎ",
+      "en": "to play (ball games)",
+      "a": "2832c957c5a1"
+     }
+    ]
+   },
+   {
+    "c": "網",
+    "py": "wǎng",
+    "w": [
+     {
+      "zh": "網球",
+      "py": "wǎngqiú",
+      "en": "tennis",
+      "a": "ea40de318fe4"
+     }
+    ]
+   },
+   {
+    "c": "球",
+    "py": "qiú",
+    "w": [
+     {
+      "zh": "網球",
+      "py": "wǎngqiú",
+      "en": "tennis",
+      "a": "ea40de318fe4"
+     },
+     {
+      "zh": "棒球",
+      "py": "bàngqiú",
+      "en": "baseball",
+      "a": "babf32b93a14"
+     },
+     {
+      "zh": "籃球",
+      "py": "lánqiú",
+      "en": "basketball",
+      "a": "ee422fe3a63e"
+     },
+     {
+      "zh": "足球",
+      "py": "zúqiú",
+      "en": "soccer",
+      "a": "6f0a81d25d83"
+     }
+    ]
+   },
+   {
+    "c": "棒",
+    "py": "bàng",
+    "w": [
+     {
+      "zh": "棒球",
+      "py": "bàngqiú",
+      "en": "baseball",
+      "a": "babf32b93a14"
+     }
+    ]
+   },
+   {
+    "c": "和",
+    "py": "hàn",
+    "w": [
+     {
+      "zh": "和",
+      "py": "hàn",
+      "en": "and, as well as",
+      "a": "614e5b240c26"
+     }
+    ]
+   },
+   {
+    "c": "游",
+    "py": "yóu",
+    "w": [
+     {
+      "zh": "游泳",
+      "py": "yóuyǒng",
+      "en": "to swim",
+      "a": "9c15c62bb334"
+     }
+    ]
+   },
+   {
+    "c": "泳",
+    "py": "yǒng",
+    "w": [
+     {
+      "zh": "游泳",
+      "py": "yóuyǒng",
+      "en": "to swim",
+      "a": "9c15c62bb334"
+     }
+    ]
+   },
+   {
+    "c": "常",
+    "py": "cháng",
+    "w": [
+     {
+      "zh": "常",
+      "py": "cháng",
+      "en": "often",
+      "a": "bced6105c657"
+     }
+    ]
+   },
+   {
+    "c": "籃",
+    "py": "lán",
+    "w": [
+     {
+      "zh": "籃球",
+      "py": "lánqiú",
+      "en": "basketball",
+      "a": "ee422fe3a63e"
+     }
+    ]
+   },
+   {
+    "c": "也",
+    "py": "yě",
+    "w": [
+     {
+      "zh": "也",
+      "py": "yě",
+      "en": "also",
+      "a": "bf24865bc2ca"
+     }
+    ]
+   },
+   {
+    "c": "踢",
+    "py": "tī",
+    "w": [
+     {
+      "zh": "踢",
+      "py": "tī",
+      "en": "to kick",
+      "a": "3c7b37d464aa"
+     }
+    ]
+   },
+   {
+    "c": "足",
+    "py": "zú",
+    "w": [
+     {
+      "zh": "足球",
+      "py": "zúqiú",
+      "en": "soccer",
+      "a": "6f0a81d25d83"
+     }
+    ]
+   },
+   {
+    "c": "覺",
+    "py": "jué",
+    "w": [
+     {
+      "zh": "覺得",
+      "py": "juéde",
+      "en": "to feel, to think",
+      "a": "5adcdc6570b1"
+     }
+    ]
+   },
+   {
+    "c": "得",
+    "py": "de",
+    "w": [
+     {
+      "zh": "覺得",
+      "py": "juéde",
+      "en": "to feel, to think",
+      "a": "5adcdc6570b1"
+     }
+    ]
+   },
+   {
+    "c": "玩",
+    "py": "wán",
+    "w": [
+     {
+      "zh": "好玩",
+      "py": "hǎowán",
+      "en": "interesting, fun",
+      "a": "b47d8162d506"
+     }
+    ]
+   },
+   {
+    "c": "天",
+    "py": "tiān",
+    "w": [
+     {
+      "zh": "明天",
+      "py": "míngtiān",
+      "en": "tomorrow",
+      "a": "e2396df1c028"
+     },
+     {
+      "zh": "今天",
+      "py": "jīntiān",
+      "en": "today",
+      "a": "7acd1db69695"
+     }
+    ]
+   },
+   {
+    "c": "早",
+    "py": "zǎo",
+    "w": [
+     {
+      "zh": "早上",
+      "py": "zǎoshàng",
+      "en": "morning",
+      "a": "a634f49ab215"
+     }
+    ]
+   },
+   {
+    "c": "上",
+    "py": "shang",
+    "w": [
+     {
+      "zh": "早上",
+      "py": "zǎoshàng",
+      "en": "morning",
+      "a": "a634f49ab215"
+     },
+     {
+      "zh": "晚上",
+      "py": "wǎnshàng",
+      "en": "evening, night",
+      "a": "b9565a3b7fe4"
+     }
+    ]
+   },
+   {
+    "c": "去",
+    "py": "qù",
+    "w": [
+     {
+      "zh": "去",
+      "py": "qù",
+      "en": "to go",
+      "a": "1cdcff8dd430"
+     }
+    ]
+   },
+   {
+    "c": "怎",
+    "py": "zěn",
+    "w": [
+     {
+      "zh": "怎麼樣",
+      "py": "zěnmeyàng",
+      "en": "How about it? How does that sound? What do you think?",
+      "a": "40e174a9d648"
+     }
+    ]
+   },
+   {
+    "c": "樣",
+    "py": "yàng",
+    "w": [
+     {
+      "zh": "怎麼樣",
+      "py": "zěnmeyàng",
+      "en": "How about it? How does that sound? What do you think?",
+      "a": "40e174a9d648"
+     }
+    ]
+   },
+   {
+    "c": "啊",
+    "py": "a",
+    "w": [
+     {
+      "zh": "啊",
+      "py": "a",
+      "en": "sentence-final particle",
+      "a": "b2ad6633f9b3"
+     },
+     {
+      "zh": "好啊",
+      "py": "hǎo a",
+      "en": "OK",
+      "a": "2540d0497bd8"
+     }
+    ]
+   },
+   {
+    "c": "做",
+    "py": "zuò",
+    "w": [
+     {
+      "zh": "做什麼",
+      "py": "zuò shénme",
+      "en": "do what",
+      "a": "99955e539852"
+     }
+    ]
+   },
+   {
+    "c": "白",
+    "py": "bái",
+    "w": [
+     {
+      "zh": "白如玉",
+      "py": "Bái Rúyù",
+      "en": "a woman from the US",
+      "a": "16377950c07c"
+     }
+    ]
+   },
+   {
+    "c": "如",
+    "py": "rú",
+    "w": [
+     {
+      "zh": "白如玉",
+      "py": "Bái Rúyù",
+      "en": "a woman from the US",
+      "a": "16377950c07c"
+     }
+    ]
+   },
+   {
+    "c": "玉",
+    "py": "yù",
+    "w": [
+     {
+      "zh": "白如玉",
+      "py": "Bái Rúyù",
+      "en": "a woman from the US",
+      "a": "16377950c07c"
+     }
+    ]
+   },
+   {
+    "c": "今",
+    "py": "jīn",
+    "w": [
+     {
+      "zh": "今天",
+      "py": "jīntiān",
+      "en": "today",
+      "a": "7acd1db69695"
+     }
+    ]
+   },
+   {
+    "c": "晚",
+    "py": "wǎn",
+    "w": [
+     {
+      "zh": "晚上",
+      "py": "wǎnshàng",
+      "en": "evening, night",
+      "a": "b9565a3b7fe4"
+     },
+     {
+      "zh": "晚飯",
+      "py": "wǎnfàn",
+      "en": "dinner",
+      "a": "273eca6a48fe"
+     }
+    ]
+   },
+   {
+    "c": "電",
+    "py": "diàn",
+    "w": [
+     {
+      "zh": "電影",
+      "py": "diànyǐng",
+      "en": "movie",
+      "a": "843f4ae6505d"
+     }
+    ]
+   },
+   {
+    "c": "影",
+    "py": "yǐng",
+    "w": [
+     {
+      "zh": "電影",
+      "py": "diànyǐng",
+      "en": "movie",
+      "a": "843f4ae6505d"
+     }
+    ]
+   },
+   {
+    "c": "妳",
+    "py": "nǐ",
+    "w": [
+     {
+      "zh": "妳",
+      "py": "nǐ",
+      "en": "you (female)",
+      "a": "79d8d9e80764"
+     }
+    ]
+   },
+   {
+    "c": "想",
+    "py": "xiǎng",
+    "w": [
+     {
+      "zh": "想",
+      "py": "xiǎng",
+      "en": "to want, to think",
+      "a": "61fd99b6645d"
+     }
+    ]
+   },
+   {
+    "c": "還",
+    "py": "hái",
+    "w": [
+     {
+      "zh": "還是",
+      "py": "háishì",
+      "en": "or (used in a question)",
+      "a": "8ff811a10e9f"
+     }
+    ]
+   },
+   {
+    "c": "吧",
+    "py": "ba",
+    "w": [
+     {
+      "zh": "吧",
+      "py": "ba",
+      "en": "sentence-final particle for suggestion",
+      "a": "239147cbb9aa"
+     }
+    ]
+   },
+   {
+    "c": "可",
+    "py": "kě",
+    "w": [
+     {
+      "zh": "可以",
+      "py": "kěyǐ",
+      "en": "could (possibility)",
+      "a": "29fdde764a01"
+     }
+    ]
+   },
+   {
+    "c": "以",
+    "py": "yǐ",
+    "w": [
+     {
+      "zh": "可以",
+      "py": "kěyǐ",
+      "en": "could (possibility)",
+      "a": "29fdde764a01"
+     }
+    ]
+   },
+   {
+    "c": "學",
+    "py": "xué",
+    "w": [
+     {
+      "zh": "學",
+      "py": "xué",
+      "en": "to learn, to study",
+      "a": "aad49e2b45de"
+     }
+    ]
+   },
+   {
+    "c": "吃",
+    "py": "chī",
+    "w": [
+     {
+      "zh": "吃",
+      "py": "chī",
+      "en": "to eat",
+      "a": "4e146d9f027f"
+     }
+    ]
+   },
+   {
+    "c": "飯",
+    "py": "fàn",
+    "w": [
+     {
+      "zh": "晚飯",
+      "py": "wǎnfàn",
+      "en": "dinner",
+      "a": "273eca6a48fe"
+     }
+    ]
+   },
+   {
+    "c": "菜",
+    "py": "cài",
+    "w": [
+     {
+      "zh": "菜",
+      "py": "cài",
+      "en": "cuisine",
+      "a": "7b4616de448c"
+     }
+    ]
+   },
+   {
+    "c": "越",
+    "py": "yuè",
+    "w": [
+     {
+      "zh": "越南",
+      "py": "Yuènán",
+      "en": "Vietnam",
+      "a": "1cf4feca7156"
+     }
+    ]
+   },
+   {
+    "c": "南",
+    "py": "nán",
+    "w": [
+     {
+      "zh": "越南",
+      "py": "Yuènán",
+      "en": "Vietnam",
+      "a": "1cf4feca7156"
+     }
+    ]
+   }
   ]
  },
  {
@@ -2234,6 +4220,428 @@ window.LESSONS = [
      }
     ],
     "full": "speak_L4_1.mp3"
+   }
+  ],
+  "chars": [
+   {
+    "c": "共",
+    "py": "gòng",
+    "w": [
+     {
+      "zh": "一共",
+      "py": "yígòng",
+      "en": "altogether",
+      "a": "2974307d9d37"
+     }
+    ]
+   },
+   {
+    "c": "少",
+    "py": "shǎo",
+    "w": [
+     {
+      "zh": "多少",
+      "py": "duōshǎo",
+      "en": "how much, how many",
+      "a": "8b1c697112e2"
+     }
+    ]
+   },
+   {
+    "c": "錢",
+    "py": "qián",
+    "w": [
+     {
+      "zh": "錢",
+      "py": "qián",
+      "en": "money",
+      "a": "00eeefdb27ea"
+     }
+    ]
+   },
+   {
+    "c": "闆",
+    "py": "bǎn",
+    "w": [
+     {
+      "zh": "老闆",
+      "py": "lǎobǎn",
+      "en": "store-owner, boss",
+      "a": "aabfb3d207d8"
+     }
+    ]
+   },
+   {
+    "c": "買",
+    "py": "mǎi",
+    "w": [
+     {
+      "zh": "買",
+      "py": "mǎi",
+      "en": "to buy",
+      "a": "5a5d46f7b6d8"
+     }
+    ]
+   },
+   {
+    "c": "杯",
+    "py": "bēi",
+    "w": [
+     {
+      "zh": "杯",
+      "py": "bēi",
+      "en": "cup",
+      "a": "9d799bc4b3c4"
+     }
+    ]
+   },
+   {
+    "c": "熱",
+    "py": "rè",
+    "w": [
+     {
+      "zh": "熱",
+      "py": "rè",
+      "en": "hot",
+      "a": "eda67e7d2d55"
+     }
+    ]
+   },
+   {
+    "c": "包",
+    "py": "bāo",
+    "w": [
+     {
+      "zh": "包子",
+      "py": "bāozi",
+      "en": "steamed buns with meat stuffing filling",
+      "a": "6f6eb0d3f15e"
+     }
+    ]
+   },
+   {
+    "c": "大",
+    "py": "dà",
+    "w": [
+     {
+      "zh": "大",
+      "py": "dà",
+      "en": "large",
+      "a": "19a17a7c31dd"
+     }
+    ]
+   },
+   {
+    "c": "幫",
+    "py": "bāng",
+    "w": [
+     {
+      "zh": "幫",
+      "py": "bāng",
+      "en": "for",
+      "a": "1ae20da9bf23"
+     }
+    ]
+   },
+   {
+    "c": "微",
+    "py": "wēi",
+    "w": [
+     {
+      "zh": "微波",
+      "py": "wéibō",
+      "en": "to microwave",
+      "a": "7385964cbd42"
+     }
+    ]
+   },
+   {
+    "c": "波",
+    "py": "bō",
+    "w": [
+     {
+      "zh": "微波",
+      "py": "wéibō",
+      "en": "to microwave",
+      "a": "7385964cbd42"
+     }
+    ]
+   },
+   {
+    "c": "百",
+    "py": "bǎi",
+    "w": [
+     {
+      "zh": "百",
+      "py": "bǎi",
+      "en": "hundred",
+      "a": "40e47cf70e79"
+     }
+    ]
+   },
+   {
+    "c": "塊",
+    "py": "kuài",
+    "w": [
+     {
+      "zh": "塊",
+      "py": "kuài",
+      "en": "measure word for Chinese money",
+      "a": "ccf20b323f0e"
+     }
+    ]
+   },
+   {
+    "c": "外",
+    "py": "wài",
+    "w": [
+     {
+      "zh": "外帶",
+      "py": "wàidài",
+      "en": "take out, to go",
+      "a": "8b7e07dc7df1"
+     }
+    ]
+   },
+   {
+    "c": "帶",
+    "py": "dài",
+    "w": [
+     {
+      "zh": "外帶",
+      "py": "wàidài",
+      "en": "take out, to go",
+      "a": "8b7e07dc7df1"
+     }
+    ]
+   },
+   {
+    "c": "內",
+    "py": "nèi",
+    "w": [
+     {
+      "zh": "內用",
+      "py": "nèiyòng",
+      "en": "for here",
+      "a": "a890742cda65"
+     }
+    ]
+   },
+   {
+    "c": "用",
+    "py": "yòng",
+    "w": [
+     {
+      "zh": "內用",
+      "py": "nèiyòng",
+      "en": "for here",
+      "a": "a890742cda65"
+     }
+    ]
+   },
+   {
+    "c": "支",
+    "py": "zhī",
+    "w": [
+     {
+      "zh": "支",
+      "py": "zhī",
+      "en": "measure word for cell phones",
+      "a": "68568ad2bcd4"
+     }
+    ]
+   },
+   {
+    "c": "新",
+    "py": "xīn",
+    "w": [
+     {
+      "zh": "新",
+      "py": "xīn",
+      "en": "new",
+      "a": "68b40ef8d660"
+     }
+    ]
+   },
+   {
+    "c": "手",
+    "py": "shǒu",
+    "w": [
+     {
+      "zh": "手機",
+      "py": "shǒujī",
+      "en": "cell phone",
+      "a": "08df675f5956"
+     }
+    ]
+   },
+   {
+    "c": "機",
+    "py": "jī",
+    "w": [
+     {
+      "zh": "手機",
+      "py": "shǒujī",
+      "en": "cell phone",
+      "a": "08df675f5956"
+     }
+    ]
+   },
+   {
+    "c": "太",
+    "py": "tài",
+    "w": [
+     {
+      "zh": "太",
+      "py": "tài",
+      "en": "too",
+      "a": "2c8fc5f7c779"
+     }
+    ]
+   },
+   {
+    "c": "舊",
+    "py": "jiù",
+    "w": [
+     {
+      "zh": "舊",
+      "py": "jiù",
+      "en": "old",
+      "a": "2e432701d1e9"
+     }
+    ]
+   },
+   {
+    "c": "了",
+    "py": "le",
+    "w": [
+     {
+      "zh": "了",
+      "py": "le",
+      "en": "sentence-final particle indicating the speaker's sense of certainty",
+      "a": "23595f184c78"
+     }
+    ]
+   },
+   {
+    "c": "種",
+    "py": "zhǒng",
+    "w": [
+     {
+      "zh": "種",
+      "py": "zhǒng",
+      "en": "kind, type",
+      "a": "cd98752dffe6"
+     }
+    ]
+   },
+   {
+    "c": "能",
+    "py": "néng",
+    "w": [
+     {
+      "zh": "能",
+      "py": "néng",
+      "en": "can, to be able to",
+      "a": "bbd8585ae581"
+     }
+    ]
+   },
+   {
+    "c": "那",
+    "py": "nà",
+    "w": [
+     {
+      "zh": "那",
+      "py": "nà / nèi",
+      "en": "that",
+      "a": "7985a740f607"
+     }
+    ]
+   },
+   {
+    "c": "貴",
+    "py": "guì",
+    "w": [
+     {
+      "zh": "貴",
+      "py": "guì",
+      "en": "expensive",
+      "a": "d54cfa0512e9"
+     }
+    ]
+   },
+   {
+    "c": "賣",
+    "py": "mài",
+    "w": [
+     {
+      "zh": "賣",
+      "py": "mài",
+      "en": "to sell",
+      "a": "29e6b95be971"
+     }
+    ]
+   },
+   {
+    "c": "便",
+    "py": "pián",
+    "w": [
+     {
+      "zh": "便宜",
+      "py": "piányí",
+      "en": "cheap, inexpensive",
+      "a": "935bee999a1d"
+     }
+    ]
+   },
+   {
+    "c": "宜",
+    "py": "yi",
+    "w": [
+     {
+      "zh": "便宜",
+      "py": "piányí",
+      "en": "cheap, inexpensive",
+      "a": "935bee999a1d"
+     }
+    ]
+   },
+   {
+    "c": "萬",
+    "py": "wàn",
+    "w": [
+     {
+      "zh": "萬",
+      "py": "wàn",
+      "en": "ten thousand",
+      "a": "306b6749f6a0"
+     }
+    ]
+   },
+   {
+    "c": "千",
+    "py": "qiān",
+    "w": [
+     {
+      "zh": "千",
+      "py": "qiān",
+      "en": "thousand",
+      "a": "adc478687fbc"
+     }
+    ]
+   },
+   {
+    "c": "為",
+    "py": "wèi",
+    "w": [
+     {
+      "zh": "為什麼",
+      "py": "wèishénme",
+      "en": "why",
+      "a": "4c705886d01d"
+     }
+    ]
    }
   ]
  },
@@ -2795,6 +5203,380 @@ window.LESSONS = [
      }
     ],
     "full": "speak_L5_1.mp3"
+   }
+  ],
+  "chars": [
+   {
+    "c": "牛",
+    "py": "niú",
+    "w": [
+     {
+      "zh": "牛肉",
+      "py": "niúròu",
+      "en": "beef",
+      "a": "091eee29f9f4"
+     }
+    ]
+   },
+   {
+    "c": "肉",
+    "py": "ròu",
+    "w": [
+     {
+      "zh": "牛肉",
+      "py": "niúròu",
+      "en": "beef",
+      "a": "091eee29f9f4"
+     }
+    ]
+   },
+   {
+    "c": "麵",
+    "py": "miàn",
+    "w": [
+     {
+      "zh": "麵",
+      "py": "miàn",
+      "en": "noodles",
+      "a": "36eaed22b283"
+     }
+    ]
+   },
+   {
+    "c": "真",
+    "py": "zhēn",
+    "w": [
+     {
+      "zh": "真",
+      "py": "zhēn",
+      "en": "really",
+      "a": "d03dbe30b7d0"
+     }
+    ]
+   },
+   {
+    "c": "說",
+    "py": "shuō",
+    "w": [
+     {
+      "zh": "說",
+      "py": "shuō",
+      "en": "say",
+      "a": "5234f21c7008"
+     }
+    ]
+   },
+   {
+    "c": "最",
+    "py": "zuì",
+    "w": [
+     {
+      "zh": "最",
+      "py": "zuì",
+      "en": "most",
+      "a": "71f298d8dd24"
+     }
+    ]
+   },
+   {
+    "c": "湯",
+    "py": "tāng",
+    "w": [
+     {
+      "zh": "湯",
+      "py": "tāng",
+      "en": "soup, broth",
+      "a": "3b63603a38b4"
+     }
+    ]
+   },
+   {
+    "c": "知",
+    "py": "zhī",
+    "w": [
+     {
+      "zh": "知道",
+      "py": "zhīdào",
+      "en": "to know",
+      "a": "edb7d801698e"
+     }
+    ]
+   },
+   {
+    "c": "道",
+    "py": "dao",
+    "w": [
+     {
+      "zh": "知道",
+      "py": "zhīdào",
+      "en": "to know",
+      "a": "edb7d801698e"
+     }
+    ]
+   },
+   {
+    "c": "店",
+    "py": "diàn",
+    "w": [
+     {
+      "zh": "店",
+      "py": "diàn",
+      "en": "shop, store",
+      "a": "1b27edcb984a"
+     }
+    ]
+   },
+   {
+    "c": "定",
+    "py": "dìng",
+    "w": [
+     {
+      "zh": "一定",
+      "py": "yídìng",
+      "en": "really must, definitely",
+      "a": "dfacbd31bf9d"
+     }
+    ]
+   },
+   {
+    "c": "點",
+    "py": "diǎn",
+    "w": [
+     {
+      "zh": "點",
+      "py": "diǎn",
+      "en": "to order (meals)",
+      "a": "3a4ff05163f2"
+     },
+     {
+      "zh": "甜點",
+      "py": "tiándiǎn",
+      "en": "dessert",
+      "a": "0fea03354acb"
+     },
+     {
+      "zh": "有一點",
+      "py": "yǒu yìdiǎn",
+      "en": "a little",
+      "a": "2f9fd557ed8b"
+     }
+    ]
+   },
+   {
+    "c": "碗",
+    "py": "wǎn",
+    "w": [
+     {
+      "zh": "碗",
+      "py": "wǎn",
+      "en": "a bowl of",
+      "a": "110c77d1020a"
+     }
+    ]
+   },
+   {
+    "c": "籠",
+    "py": "lóng",
+    "w": [
+     {
+      "zh": "小籠包",
+      "py": "xiǎolóngbāo",
+      "en": "xiaolongbao, e.g., small meat and cabbage-filled steamed buns",
+      "a": "f7ba49ec8f72"
+     }
+    ]
+   },
+   {
+    "c": "臭",
+    "py": "chòu",
+    "w": [
+     {
+      "zh": "臭豆腐",
+      "py": "chòu dòufǔ",
+      "en": "stinky tofu (fermented tofu)",
+      "a": "844171a70fee"
+     }
+    ]
+   },
+   {
+    "c": "豆",
+    "py": "dòu",
+    "w": [
+     {
+      "zh": "臭豆腐",
+      "py": "chòu dòufǔ",
+      "en": "stinky tofu (fermented tofu)",
+      "a": "844171a70fee"
+     }
+    ]
+   },
+   {
+    "c": "腐",
+    "py": "fǔ",
+    "w": [
+     {
+      "zh": "臭豆腐",
+      "py": "chòu dòufǔ",
+      "en": "stinky tofu (fermented tofu)",
+      "a": "844171a70fee"
+     }
+    ]
+   },
+   {
+    "c": "昨",
+    "py": "zuó",
+    "w": [
+     {
+      "zh": "昨天",
+      "py": "zuótiān",
+      "en": "yesterday",
+      "a": "78232a69d8f1"
+     }
+    ]
+   },
+   {
+    "c": "餐",
+    "py": "cān",
+    "w": [
+     {
+      "zh": "餐廳",
+      "py": "cāntīng",
+      "en": "restaurant",
+      "a": "db7526a9189b"
+     }
+    ]
+   },
+   {
+    "c": "廳",
+    "py": "tīng",
+    "w": [
+     {
+      "zh": "餐廳",
+      "py": "cāntīng",
+      "en": "restaurant",
+      "a": "db7526a9189b"
+     }
+    ]
+   },
+   {
+    "c": "辣",
+    "py": "là",
+    "w": [
+     {
+      "zh": "辣",
+      "py": "là",
+      "en": "hot (spicy)",
+      "a": "50b3c89015cf"
+     }
+    ]
+   },
+   {
+    "c": "怕",
+    "py": "pà",
+    "w": [
+     {
+      "zh": "怕",
+      "py": "pà",
+      "en": "(here) to not like, to fear",
+      "a": "5a0ccd5deff6"
+     }
+    ]
+   },
+   {
+    "c": "所",
+    "py": "suǒ",
+    "w": [
+     {
+      "zh": "所以",
+      "py": "suǒyǐ",
+      "en": "therefore, so",
+      "a": "c05e9df954cd"
+     }
+    ]
+   },
+   {
+    "c": "自",
+    "py": "zì",
+    "w": [
+     {
+      "zh": "自己",
+      "py": "zìjǐ",
+      "en": "self",
+      "a": "fb0b0a9600cb"
+     }
+    ]
+   },
+   {
+    "c": "己",
+    "py": "jǐ",
+    "w": [
+     {
+      "zh": "自己",
+      "py": "zìjǐ",
+      "en": "self",
+      "a": "fb0b0a9600cb"
+     }
+    ]
+   },
+   {
+    "c": "會",
+    "py": "huì",
+    "w": [
+     {
+      "zh": "會",
+      "py": "huì",
+      "en": "to be able to, can",
+      "a": "88abde62f0ec"
+     }
+    ]
+   },
+   {
+    "c": "甜",
+    "py": "tián",
+    "w": [
+     {
+      "zh": "甜點",
+      "py": "tiándiǎn",
+      "en": "dessert",
+      "a": "0fea03354acb"
+     }
+    ]
+   },
+   {
+    "c": "錯",
+    "py": "cuò",
+    "w": [
+     {
+      "zh": "不錯",
+      "py": "búcuò",
+      "en": "not bad",
+      "a": "892f6ab7b322"
+     }
+    ]
+   },
+   {
+    "c": "教",
+    "py": "jiào",
+    "w": [
+     {
+      "zh": "教",
+      "py": "jiāo",
+      "en": "to teach",
+      "a": "96ed7ef93173"
+     }
+    ]
+   },
+   {
+    "c": "到",
+    "py": "dào",
+    "w": [
+     {
+      "zh": "到",
+      "py": "dào",
+      "en": "to",
+      "a": "66f77a9d4e34"
+     }
+    ]
    }
   ]
  },
@@ -3590,6 +6372,518 @@ window.LESSONS = [
     ],
     "full": "speak_L6_2.mp3"
    }
+  ],
+  "chars": [
+   {
+    "c": "校",
+    "py": "xiào",
+    "w": [
+     {
+      "zh": "學校",
+      "py": "xuéxiào",
+      "en": "school",
+      "a": "8e839a102abe"
+     }
+    ]
+   },
+   {
+    "c": "在",
+    "py": "zài",
+    "w": [
+     {
+      "zh": "在",
+      "py": "zài",
+      "en": "to be located at",
+      "a": "b55be7cb1306"
+     },
+     {
+      "zh": "現在",
+      "py": "xiànzài",
+      "en": "now",
+      "a": "b2f0aad067f5"
+     },
+     {
+      "zh": "在",
+      "py": "zài",
+      "en": "at",
+      "a": "b55be7cb1306"
+     }
+    ]
+   },
+   {
+    "c": "山",
+    "py": "shān",
+    "w": [
+     {
+      "zh": "山上",
+      "py": "shānshàng",
+      "en": "on a mountain, in the mountains",
+      "a": "64253085a124"
+     },
+     {
+      "zh": "山",
+      "py": "shān",
+      "en": "mountain",
+      "a": "e8d35bfcb029"
+     }
+    ]
+   },
+   {
+    "c": "裡",
+    "py": "lǐ",
+    "w": [
+     {
+      "zh": "哪裡",
+      "py": "nǎlǐ",
+      "en": "where",
+      "a": "163c487abd2a"
+     },
+     {
+      "zh": "那裡",
+      "py": "nàlǐ",
+      "en": "that place, there",
+      "a": "0fb63b1a5f41"
+     },
+     {
+      "zh": "這裡",
+      "py": "zhèlǐ",
+      "en": "here, this place",
+      "a": "7aed1359b3cd"
+     },
+     {
+      "zh": "裡面",
+      "py": "lǐmiàn",
+      "en": "inside",
+      "a": "60d95a49fad1"
+     }
+    ]
+   },
+   {
+    "c": "遠",
+    "py": "yuǎn",
+    "w": [
+     {
+      "zh": "遠",
+      "py": "yuǎn",
+      "en": "far",
+      "a": "3b56e5672fa2"
+     }
+    ]
+   },
+   {
+    "c": "風",
+    "py": "fēng",
+    "w": [
+     {
+      "zh": "風景",
+      "py": "fēngjǐng",
+      "en": "scenery, landscape",
+      "a": "efbda86a58ae"
+     }
+    ]
+   },
+   {
+    "c": "景",
+    "py": "jǐng",
+    "w": [
+     {
+      "zh": "風景",
+      "py": "fēngjǐng",
+      "en": "scenery, landscape",
+      "a": "efbda86a58ae"
+     }
+    ]
+   },
+   {
+    "c": "前",
+    "py": "qián",
+    "w": [
+     {
+      "zh": "前面",
+      "py": "qiánmiàn",
+      "en": "front",
+      "a": "c686823e3a02"
+     }
+    ]
+   },
+   {
+    "c": "面",
+    "py": "miàn",
+    "w": [
+     {
+      "zh": "前面",
+      "py": "qiánmiàn",
+      "en": "front",
+      "a": "c686823e3a02"
+     },
+     {
+      "zh": "後面",
+      "py": "hòumiàn",
+      "en": "back",
+      "a": "82f54d2325bd"
+     },
+     {
+      "zh": "外面",
+      "py": "wàimiàn",
+      "en": "outside",
+      "a": "ea0268cc0a6d"
+     },
+     {
+      "zh": "裡面",
+      "py": "lǐmiàn",
+      "en": "inside",
+      "a": "60d95a49fad1"
+     }
+    ]
+   },
+   {
+    "c": "海",
+    "py": "hǎi",
+    "w": [
+     {
+      "zh": "海",
+      "py": "hǎi",
+      "en": "ocean",
+      "a": "a179b7b08adc"
+     }
+    ]
+   },
+   {
+    "c": "後",
+    "py": "hòu",
+    "w": [
+     {
+      "zh": "後面",
+      "py": "hòumiàn",
+      "en": "back",
+      "a": "82f54d2325bd"
+     }
+    ]
+   },
+   {
+    "c": "地",
+    "py": "dì",
+    "w": [
+     {
+      "zh": "地方",
+      "py": "dìfāng",
+      "en": "place",
+      "a": "eedb79c71ca0"
+     }
+    ]
+   },
+   {
+    "c": "方",
+    "py": "fāng",
+    "w": [
+     {
+      "zh": "地方",
+      "py": "dìfāng",
+      "en": "place",
+      "a": "eedb79c71ca0"
+     },
+     {
+      "zh": "方便",
+      "py": "fāngbiàn",
+      "en": "convenient",
+      "a": "aa76c1b97640"
+     }
+    ]
+   },
+   {
+    "c": "現",
+    "py": "xiàn",
+    "w": [
+     {
+      "zh": "現在",
+      "py": "xiànzài",
+      "en": "now",
+      "a": "b2f0aad067f5"
+     }
+    ]
+   },
+   {
+    "c": "附",
+    "py": "fù",
+    "w": [
+     {
+      "zh": "附近",
+      "py": "fùjìn",
+      "en": "vicinity, near",
+      "a": "cc1dff567567"
+     }
+    ]
+   },
+   {
+    "c": "近",
+    "py": "jìn",
+    "w": [
+     {
+      "zh": "附近",
+      "py": "fùjìn",
+      "en": "vicinity, near",
+      "a": "cc1dff567567"
+     },
+     {
+      "zh": "近",
+      "py": "jìn",
+      "en": "near",
+      "a": "64d7aedfde52"
+     }
+    ]
+   },
+   {
+    "c": "樓",
+    "py": "lóu",
+    "w": [
+     {
+      "zh": "樓下",
+      "py": "lóuxià",
+      "en": "downstairs",
+      "a": "671d54789eb9"
+     },
+     {
+      "zh": "樓",
+      "py": "lóu",
+      "en": "a storey, a floor",
+      "a": "c3f113973189"
+     },
+     {
+      "zh": "大樓",
+      "py": "dàlóu",
+      "en": "a multi-storey building",
+      "a": "553627b672b9"
+     }
+    ]
+   },
+   {
+    "c": "下",
+    "py": "xià",
+    "w": [
+     {
+      "zh": "樓下",
+      "py": "lóuxià",
+      "en": "downstairs",
+      "a": "671d54789eb9"
+     }
+    ]
+   },
+   {
+    "c": "找",
+    "py": "zhǎo",
+    "w": [
+     {
+      "zh": "找",
+      "py": "zhǎo",
+      "en": "to meet, to see",
+      "a": "d85ac18c4219"
+     }
+    ]
+   },
+   {
+    "c": "朋",
+    "py": "péng",
+    "w": [
+     {
+      "zh": "朋友",
+      "py": "péngyǒu",
+      "en": "friend",
+      "a": "5604992e9939"
+     }
+    ]
+   },
+   {
+    "c": "友",
+    "py": "you",
+    "w": [
+     {
+      "zh": "朋友",
+      "py": "péngyǒu",
+      "en": "friend",
+      "a": "5604992e9939"
+     }
+    ]
+   },
+   {
+    "c": "課",
+    "py": "kè",
+    "w": [
+     {
+      "zh": "上課",
+      "py": "shàngkè",
+      "en": "to go to class",
+      "a": "48269fac6dc4"
+     }
+    ]
+   },
+   {
+    "c": "花",
+    "py": "huā",
+    "w": [
+     {
+      "zh": "花蓮",
+      "py": "Huālián",
+      "en": "name of a city on the eastern coast of Taiwan",
+      "a": "b8c446051e0f"
+     }
+    ]
+   },
+   {
+    "c": "蓮",
+    "py": "lián",
+    "w": [
+     {
+      "zh": "花蓮",
+      "py": "Huālián",
+      "en": "name of a city on the eastern coast of Taiwan",
+      "a": "b8c446051e0f"
+     }
+    ]
+   },
+   {
+    "c": "東",
+    "py": "dōng",
+    "w": [
+     {
+      "zh": "東西",
+      "py": "dōngxi",
+      "en": "things, stuff",
+      "a": "6f076cd5bb3f"
+     }
+    ]
+   },
+   {
+    "c": "西",
+    "py": "xi",
+    "w": [
+     {
+      "zh": "東西",
+      "py": "dōngxi",
+      "en": "things, stuff",
+      "a": "6f076cd5bb3f"
+     }
+    ]
+   },
+   {
+    "c": "商",
+    "py": "shāng",
+    "w": [
+     {
+      "zh": "商店",
+      "py": "shāngdiàn",
+      "en": "store, shop",
+      "a": "203a707c78ff"
+     }
+    ]
+   },
+   {
+    "c": "宿",
+    "py": "sù",
+    "w": [
+     {
+      "zh": "宿舍",
+      "py": "sùshè",
+      "en": "dormitory",
+      "a": "e3386738287f"
+     }
+    ]
+   },
+   {
+    "c": "舍",
+    "py": "shè",
+    "w": [
+     {
+      "zh": "宿舍",
+      "py": "sùshè",
+      "en": "dormitory",
+      "a": "e3386738287f"
+     }
+    ]
+   },
+   {
+    "c": "棟",
+    "py": "dòng",
+    "w": [
+     {
+      "zh": "棟",
+      "py": "dòng",
+      "en": "measure word for buildings",
+      "a": "dc40f2c248e5"
+     }
+    ]
+   },
+   {
+    "c": "圖",
+    "py": "tú",
+    "w": [
+     {
+      "zh": "圖書館",
+      "py": "túshūguǎn",
+      "en": "library",
+      "a": "9b4d40202f96"
+     }
+    ]
+   },
+   {
+    "c": "館",
+    "py": "guǎn",
+    "w": [
+     {
+      "zh": "圖書館",
+      "py": "túshūguǎn",
+      "en": "library",
+      "a": "9b4d40202f96"
+     }
+    ]
+   },
+   {
+    "c": "旁",
+    "py": "páng",
+    "w": [
+     {
+      "zh": "旁邊",
+      "py": "pángbiān",
+      "en": "(by the) side, next to",
+      "a": "0e6578200a88"
+     }
+    ]
+   },
+   {
+    "c": "邊",
+    "py": "biān",
+    "w": [
+     {
+      "zh": "旁邊",
+      "py": "pángbiān",
+      "en": "(by the) side, next to",
+      "a": "0e6578200a88"
+     }
+    ]
+   },
+   {
+    "c": "室",
+    "py": "shì",
+    "w": [
+     {
+      "zh": "教室",
+      "py": "jiàoshì",
+      "en": "classroom",
+      "a": "0a5258af656f"
+     }
+    ]
+   },
+   {
+    "c": "池",
+    "py": "chí",
+    "w": [
+     {
+      "zh": "游泳池",
+      "py": "yóuyǒngchí",
+      "en": "swimming pool",
+      "a": "4313488b6959"
+     }
+    ]
+   }
   ]
  },
  {
@@ -4339,6 +7633,374 @@ window.LESSONS = [
      }
     ],
     "full": "speak_L7_1.mp3"
+   }
+  ],
+  "chars": [
+   {
+    "c": "唱",
+    "py": "chàng",
+    "w": [
+     {
+      "zh": "唱歌",
+      "py": "chànggē",
+      "en": "to sing",
+      "a": "0e380b981f21"
+     }
+    ]
+   },
+   {
+    "c": "歌",
+    "py": "gē",
+    "w": [
+     {
+      "zh": "唱歌",
+      "py": "chànggē",
+      "en": "to sing",
+      "a": "0e380b981f21"
+     }
+    ]
+   },
+   {
+    "c": "分",
+    "py": "fēn",
+    "w": [
+     {
+      "zh": "分",
+      "py": "fēn",
+      "en": "minute",
+      "a": "2fdc19b983eb"
+     }
+    ]
+   },
+   {
+    "c": "見",
+    "py": "jiàn",
+    "w": [
+     {
+      "zh": "見面",
+      "py": "jiànmiàn",
+      "en": "meet",
+      "a": "c93e21c13d44"
+     },
+     {
+      "zh": "再見",
+      "py": "zàijiàn",
+      "en": "Goodbye.",
+      "a": "b83eaaffc5b1"
+     }
+    ]
+   },
+   {
+    "c": "從",
+    "py": "cóng",
+    "w": [
+     {
+      "zh": "從",
+      "py": "cóng",
+      "en": "from",
+      "a": "14930f2f3f19"
+     }
+    ]
+   },
+   {
+    "c": "午",
+    "py": "wǔ",
+    "w": [
+     {
+      "zh": "中午",
+      "py": "zhōngwǔ",
+      "en": "noon",
+      "a": "3335c112933c"
+     },
+     {
+      "zh": "午餐",
+      "py": "wǔcān",
+      "en": "lunch",
+      "a": "feb8a154df87"
+     },
+     {
+      "zh": "下午",
+      "py": "xiàwǔ",
+      "en": "afternoon",
+      "a": "31000ae9b3c7"
+     }
+    ]
+   },
+   {
+    "c": "銀",
+    "py": "yín",
+    "w": [
+     {
+      "zh": "銀行",
+      "py": "yínháng",
+      "en": "bank",
+      "a": "07f391dc29de"
+     }
+    ]
+   },
+   {
+    "c": "行",
+    "py": "xíng",
+    "w": [
+     {
+      "zh": "銀行",
+      "py": "yínháng",
+      "en": "bank",
+      "a": "07f391dc29de"
+     }
+    ]
+   },
+   {
+    "c": "時",
+    "py": "shí",
+    "w": [
+     {
+      "zh": "時候",
+      "py": "shíhòu",
+      "en": "when",
+      "a": "3888e42b47e7"
+     }
+    ]
+   },
+   {
+    "c": "候",
+    "py": "hou",
+    "w": [
+     {
+      "zh": "時候",
+      "py": "shíhòu",
+      "en": "when",
+      "a": "3888e42b47e7"
+     }
+    ]
+   },
+   {
+    "c": "次",
+    "py": "cì",
+    "w": [
+     {
+      "zh": "下次",
+      "py": "xià cì",
+      "en": "next time",
+      "a": "92d054a93b0a"
+     }
+    ]
+   },
+   {
+    "c": "題",
+    "py": "tí",
+    "w": [
+     {
+      "zh": "沒問題",
+      "py": "méi wèntí",
+      "en": "No problem.",
+      "a": "de50c3d653af"
+     }
+    ]
+   },
+   {
+    "c": "空",
+    "py": "kòng",
+    "w": [
+     {
+      "zh": "有空",
+      "py": "yǒu kòng",
+      "en": "to have free time",
+      "a": "7ccb42a475e8"
+     }
+    ]
+   },
+   {
+    "c": "再",
+    "py": "zài",
+    "w": [
+     {
+      "zh": "再見",
+      "py": "zàijiàn",
+      "en": "Goodbye.",
+      "a": "b83eaaffc5b1"
+     }
+    ]
+   },
+   {
+    "c": "剛",
+    "py": "gāng",
+    "w": [
+     {
+      "zh": "剛",
+      "py": "gāng",
+      "en": "just now",
+      "a": "dac70bd03b38"
+     }
+    ]
+   },
+   {
+    "c": "半",
+    "py": "bàn",
+    "w": [
+     {
+      "zh": "半",
+      "py": "bàn",
+      "en": "half",
+      "a": "f6d820d8a8e9"
+     }
+    ]
+   },
+   {
+    "c": "比",
+    "py": "bǐ",
+    "w": [
+     {
+      "zh": "比賽",
+      "py": "bǐsài",
+      "en": "game, competition",
+      "a": "717ec2cc28ee"
+     }
+    ]
+   },
+   {
+    "c": "賽",
+    "py": "sài",
+    "w": [
+     {
+      "zh": "比賽",
+      "py": "bǐsài",
+      "en": "game, competition",
+      "a": "717ec2cc28ee"
+     }
+    ]
+   },
+   {
+    "c": "結",
+    "py": "jié",
+    "w": [
+     {
+      "zh": "結束",
+      "py": "jiéshù",
+      "en": "to finish",
+      "a": "184848fd644e"
+     }
+    ]
+   },
+   {
+    "c": "束",
+    "py": "shù",
+    "w": [
+     {
+      "zh": "結束",
+      "py": "jiéshù",
+      "en": "to finish",
+      "a": "184848fd644e"
+     }
+    ]
+   },
+   {
+    "c": "忙",
+    "py": "máng",
+    "w": [
+     {
+      "zh": "忙",
+      "py": "máng",
+      "en": "busy",
+      "a": "6ced838a141a"
+     }
+    ]
+   },
+   {
+    "c": "每",
+    "py": "měi",
+    "w": [
+     {
+      "zh": "每",
+      "py": "měi",
+      "en": "every, each",
+      "a": "740163dc4efc"
+     }
+    ]
+   },
+   {
+    "c": "法",
+    "py": "fǎ",
+    "w": [
+     {
+      "zh": "書法",
+      "py": "shūfǎ",
+      "en": "calligraphy",
+      "a": "eb6dce246390"
+     }
+    ]
+   },
+   {
+    "c": "始",
+    "py": "shǐ",
+    "w": [
+     {
+      "zh": "開始",
+      "py": "kāishǐ",
+      "en": "to begin, to start",
+      "a": "2970d3dd2984"
+     }
+    ]
+   },
+   {
+    "c": "寫",
+    "py": "xiě",
+    "w": [
+     {
+      "zh": "寫",
+      "py": "xiě",
+      "en": "to write",
+      "a": "974940e8d763"
+     }
+    ]
+   },
+   {
+    "c": "等",
+    "py": "děng",
+    "w": [
+     {
+      "zh": "等一下",
+      "py": "děng yíxià",
+      "en": "later",
+      "a": "a0aebac435ab"
+     }
+    ]
+   },
+   {
+    "c": "事",
+    "py": "shì",
+    "w": [
+     {
+      "zh": "有事",
+      "py": "yǒu shì",
+      "en": "to be busy, to be engaged",
+      "a": "0465596b9ff2"
+     }
+    ]
+   },
+   {
+    "c": "意",
+    "py": "yì",
+    "w": [
+     {
+      "zh": "有意思",
+      "py": "yǒu yìsi",
+      "en": "to be interesting, to be fun",
+      "a": "7d0fcc08b667"
+     }
+    ]
+   },
+   {
+    "c": "思",
+    "py": "si",
+    "w": [
+     {
+      "zh": "有意思",
+      "py": "yǒu yìsi",
+      "en": "to be interesting, to be fun",
+      "a": "7d0fcc08b667"
+     }
+    ]
    }
   ]
  }
