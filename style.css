@@ -48,7 +48,8 @@ h2 { font-size: 20px; margin: 28px 0 10px; }
 
 .toolbar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; margin: 12px 0; }
 .toolbar label { font-size: 14px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
-.toolbar select { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 3px 6px; }
+.toolbar label { max-width: 100%; }
+.toolbar select { max-width: 100%; min-width: 0; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 3px 6px; }
 .btn { border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); border-radius: 8px; padding: 7px 14px; font-weight: 600; }
 .btn.ghost { background: transparent; color: var(--accent); }
 .btn:disabled { opacity: .5; cursor: default; }
@@ -137,4 +138,6 @@ h2 { font-size: 20px; margin: 28px 0 10px; }
 .wlinks { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 2px; font-size: 13px; }
 .wlinks a { text-decoration: none; }
 .wlinks a:hover { text-decoration: underline; }
+.blank { display: inline-block; min-width: 1.1em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.got { color: var(--ok); }
 footer { color: var(--muted); font-size: 13px; text-align: center; padding: 24px 16px; }

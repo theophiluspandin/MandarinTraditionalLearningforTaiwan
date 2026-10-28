@@ -311,11 +311,84 @@
   LESSONS.forEach(L => (L.chars || []).forEach(ch => { CHAR_HOME[ch.c] = L.n; }));
   let writer = null;
 
+  function makeWriter(box, c, size, stat) {
+    box.innerHTML = ''; box.style.width = box.style.height = size + 'px';
+    if (!window.HanziWriter) { stat('Stroke data needs an internet connection (Hanzi Writer library failed to load).'); return null; }
+    const css = getComputedStyle(document.documentElement), col = v => css.getPropertyValue(v).trim();
+    return HanziWriter.create(box, c, {
+      width: size, height: size, padding: 12, showOutline: true, showCharacter: false,
+      strokeColor: col('--ink'), outlineColor: col('--line'), drawingColor: col('--accent'), highlightColor: col('--ok'),
+      radicalColor: null, strokeAnimationSpeed: 1, delayBetweenStrokes: 250, drawingWidth: 6,
+      onLoadCharDataSuccess: d => stat(d.strokes.length + ' strokes'),
+      onLoadCharDataError: () => stat('Could not load stroke data (needs internet).')
+    });
+  }
+
+  // Handwriting test: show a word with one character blanked out, play it, and ask for that character from memory.
+  function writingTest(box, chars, onBack) {
+    stopAll();
+    let deck = shuffle(chars), score = 0, total = 0;
+    const next = () => {
+      if (!deck.length) {
+        box.innerHTML = `<div class="panel center"><h2 style="margin-top:0">All done 🎉</h2><p>${score} of ${total} written perfectly from memory.</p>
+          <button class="btn" id="again">Test again</button>${onBack ? ' <button class="btn ghost" id="back">← Characters</button>' : ''}</div>`;
+        $('#again', box).onclick = () => writingTest(box, chars, onBack);
+        if (onBack) $('#back', box).onclick = onBack;
+        return;
+      }
+      const ch = deck.shift(), w = ch.w[Math.floor(Math.random() * ch.w.length)];
+      const blank = Array.from(w.zh).map(c => c === ch.c ? '<span class="blank">？</span>' : esc(c)).join('');
+      let helped = false;
+      box.innerHTML = `<div class="panel wtest">
+        <div class="sub center" style="margin:0">Write the missing character from memory</div>
+        <div class="q-prompt" style="font-family:var(--zh);margin:8px 0 2px" id="tw">${blank}</div>
+        <div class="center"><span class="py" style="font-size:18px">${esc(w.py)}</span> · <span style="color:var(--muted)">${esc(w.en)}</span>
+          <button class="play" id="say" aria-label="Play the word" style="display:inline-grid;vertical-align:middle;margin-left:6px">▶</button></div>
+        <div class="center" style="margin-top:12px"><div id="hw2" class="hw" style="margin:0 auto"></div></div>
+        <div id="tstat" class="sub center" role="status" style="margin:8px 0 0">Write the first stroke…</div>
+        <div class="wbtns" style="justify-content:center"><button class="btn ghost" id="hint">💡 Hint</button><button class="btn ghost" id="show">Show answer</button>
+          <button class="btn" id="tnext">Skip ›</button>${onBack ? '<button class="btn ghost" id="back">← Characters</button>' : ''}</div>
+        <div class="score">Score ${score} / ${total} · ${deck.length} left</div></div>`;
+      const stat = m => { const s = $('#tstat', box); if (s) s.textContent = m; };
+      const say = () => { stopAll(); playClip(w.a); };
+      $('#say', box).onclick = say;
+      say();
+      const wr = makeWriter($('#hw2', box), ch.c, Math.min(280, box.clientWidth - 48), () => {});
+      writer = wr;
+      const finish = (msg, ok) => {
+        total++; if (ok) { score++; done.add('w:' + ch.c); store.set('done', Array.from(done)); }
+        $('#tw', box).innerHTML = Array.from(w.zh).map(c => c === ch.c ? `<span class="got">${esc(c)}</span>` : esc(c)).join('');
+        stat(msg); say();
+        $('#tnext', box).textContent = 'Next ›'; $('#hint', box).disabled = $('#show', box).disabled = true;
+        $('.score', box).textContent = `Score ${score} / ${total} · ${deck.length} left`;
+      };
+      if (!wr) return;
+      wr.hideOutline();
+      wr.quiz({
+        showHintAfterMisses: 3, highlightOnComplete: true,
+        onCorrectStroke: d => stat(`Stroke ${d.strokeNum + 1} ✓ — ${d.strokesRemaining} to go`),
+        onMistake: d => stat(`Not that stroke — try again${d.mistakesOnStroke >= 3 ? ' (follow the flashing hint)' : ''}.`),
+        onComplete: d => finish(!helped && !d.totalMistakes ? 'Perfect from memory! ✓' : `Done — ${d.totalMistakes} mistake${d.totalMistakes === 1 ? '' : 's'}${helped ? ', with hints' : ''}. Keep practising this one.`, !helped && !d.totalMistakes)
+      });
+      $('#hint', box).onclick = () => { helped = true; wr.showOutline(); stat('Outline shown — trace the strokes in order.'); };
+      $('#show', box).onclick = () => {
+        helped = true; wr.cancelQuiz(); wr.showOutline(); wr.animateCharacter();
+        finish('Here is the stroke order. It goes back in the deck — you will see it again.', false);
+        deck.push(ch);
+      };
+      $('#tnext', box).onclick = next;
+      if (onBack) $('#back', box).onclick = onBack;
+    };
+    next();
+  }
+
   function writeView(body, L, pick) {
     const chars = L.chars;
     let idx = Math.max(0, chars.findIndex(c => c.c === pick));
     body.innerHTML = `<p class="sub">The ${chars.length} new characters in this lesson. Watch the stroke order, then write it yourself with your mouse or finger —
       a wrong stroke is not accepted, and after 3 misses the next stroke flashes as a hint.</p>
+      <div class="toolbar"><button class="btn" id="testme">📝 Test me: write from memory</button>
+        <span style="color:var(--muted);font-size:14px">You hear a word and see its pinyin and meaning — write the missing character.</span></div>
       <div class="chargrid">${chars.map((c, i) => `<button class="cg zh ${done.has('w:' + c.c) ? 'ok' : ''}" data-i="${i}" aria-label="${esc(c.c)} ${esc(c.py)}">${esc(c.c)}</button>`).join('')}</div>
       <div class="writepanel"><div><div id="hw" class="hw"></div>
         <div class="wbtns"><button class="btn ghost" id="prev" aria-label="Previous character">‹</button><button class="btn" id="anim">▶ Stroke order</button>
@@ -331,18 +404,8 @@
         <div class="spk" style="margin-top:10px">Words with ${esc(ch.c)}</div>
         ${ch.w.map(w => `<div class="wword"><button class="play" data-a="${w.a}" aria-label="Play ${esc(w.zh)}">▶</button><div><span class="zh">${esc(w.zh)}</span>
           <span class="py"> ${esc(w.py)}</span><div class="en">${esc(w.en)}</div></div></div>`).join('')}`;
-      const box = $('#hw'), size = Math.min(300, body.clientWidth - 24);
-      box.innerHTML = ''; box.style.width = box.style.height = size + 'px';
-      if (!window.HanziWriter) { $('#wstat').textContent = 'Stroke data needs an internet connection (Hanzi Writer library failed to load).'; return; }
-      const css = getComputedStyle(document.documentElement), col = v => css.getPropertyValue(v).trim();
-      writer = HanziWriter.create(box, ch.c, {
-        width: size, height: size, padding: 12, showOutline: true, showCharacter: false,
-        strokeColor: col('--ink'), outlineColor: col('--line'), drawingColor: col('--accent'), highlightColor: col('--ok'),
-        radicalColor: null, strokeAnimationSpeed: 1, delayBetweenStrokes: 250, drawingWidth: 6,
-        onLoadCharDataSuccess: d => { const s = $('#wstat'); if (s) s.textContent = d.strokes.length + ' strokes'; },
-        onLoadCharDataError: () => { const s = $('#wstat'); if (s) s.textContent = 'Could not load stroke data (needs internet).'; }
-      });
-      writer.showCharacter();
+      writer = makeWriter($('#hw'), ch.c, Math.min(300, body.clientWidth - 24), m => { const s = $('#wstat'); if (s) s.textContent = m; });
+      if (writer) writer.showCharacter();
     };
     const quiz = () => {
       const ch = chars[idx], w = writer; if (!w) return;
@@ -367,6 +430,7 @@
     $('#prev').onclick = () => show(idx - 1);
     $('#nextc').onclick = () => show(idx + 1);
     $('#outline').onchange = e => { prefs.outline = e.target.checked; save(); quiz(); };
+    $('#testme').onclick = () => { body.onclick = null; writingTest(body, chars, () => writeView(body, L, chars[idx].c)); };
     body.onclick = async e => {
       const g = e.target.closest('.cg'); if (g) return show(+g.dataset.i);
       const b = e.target.closest('.play[data-a]'); if (!b) return;
@@ -391,6 +455,7 @@
     'listen-zh': 'Hear a word → pick the characters',
     'en-zh': 'See the meaning → pick the characters',
     'sentence': 'Hear a sentence → pick the translation',
+    'write': 'Hear a word → handwrite the character from memory',
     'cards': 'Flashcards (Chinese → reveal)'
   };
 
@@ -408,6 +473,7 @@
     const quiz = $('#quiz'), { words, sents } = pools(scope);
     let score = 0, total = 0, deck = shuffle(words), cur = null;
     if (mode === 'cards') return card();
+    if (mode === 'write') return writingTest(quiz, [].concat(...LESSONS.filter(l => scope === 'all' || l.n === +scope).map(l => l.chars || [])));
     ask();
 
     function ask() {
