@@ -138,6 +138,10 @@ h2 { font-size: 20px; margin: 28px 0 10px; }
 .wlinks { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 2px; font-size: 13px; }
 .wlinks a { text-decoration: none; }
 .wlinks a:hover { text-decoration: underline; }
+.tr { display: none; color: var(--muted); font-size: 14px; margin-top: 2px; }
+.show-id .tid, .show-ja .tja { display: block; }
+.tja { font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", var(--ui); }
+.tr .lang { display: inline-block; font: 700 10px var(--ui); letter-spacing: .04em; color: var(--accent); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; margin-right: 6px; vertical-align: 1px; }
 .blank { display: inline-block; min-width: 1.1em; border-bottom: 3px solid var(--accent); color: var(--accent); }
 .got { color: var(--ok); }
 footer { color: var(--muted); font-size: 13px; text-align: center; padding: 24px 16px; }

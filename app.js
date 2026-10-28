@@ -5,13 +5,14 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
   const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const subs = o => (o.id ? `<div class="tr tid"><span class="lang">ID</span>${esc(o.id)}</div>` : '') + (o.ja ? `<div class="tr tja"><span class="lang">JA</span>${esc(o.ja)}</div>` : '');
   const COLORS = ['#b3402a', '#2f6f8f', '#7a5aa6', '#3d8a5b', '#c07a1a'];
 
   const store = {
     get(k, d) { try { const v = localStorage.getItem('ml_' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
     set(k, v) { try { localStorage.setItem('ml_' + k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } }
   };
-  const prefs = Object.assign({ theme: null, py: true, en: true, zh: true, ans: false, speed: 1, shadow: false, model: true, wait: 0 }, store.get('prefs', {}));
+  const prefs = Object.assign({ theme: null, py: true, en: true, zh: true, ans: false, id: false, ja: false, mlang: 'en', speed: 1, shadow: false, model: true, wait: 0 }, store.get('prefs', {}));
   const done = new Set(store.get('done', []));
   const save = () => store.set('prefs', prefs);
   let role = '';
@@ -30,6 +31,8 @@
     app.classList.toggle('hide-en', !prefs.en);
     app.classList.toggle('hide-zh', !prefs.zh);
     app.classList.toggle('hide-ans', !prefs.ans);
+    app.classList.toggle('show-id', prefs.id);
+    app.classList.toggle('show-ja', prefs.ja);
     $$('[data-vis]').forEach(b => b.setAttribute('aria-pressed', prefs[b.dataset.vis]));
   }
   $('#t-theme').onclick = () => { prefs.theme = isDark() ? 'light' : 'dark'; save(); applyChrome(); };
@@ -115,13 +118,13 @@
   const app = $('#app');
   const visChips = () => `<div class="toolbar" aria-label="Display options">
     <span style="color:var(--muted);font-size:14px">Show:</span>
-    <button class="chip" data-vis="zh">Chinese</button><button class="chip" data-vis="py">Pinyin</button><button class="chip" data-vis="en">English</button>
+    <button class="chip" data-vis="zh">Chinese</button><button class="chip" data-vis="py">Pinyin</button><button class="chip" data-vis="en">English</button><button class="chip" data-vis="id">Indonesia</button><button class="chip" data-vis="ja">日本語</button>
     <span style="color:var(--muted);font-size:13px">Hidden text is blurred — click it to reveal.</span></div>`;
   const speedSel = () => `<label>Speed <select id="speed">${[0.7, 0.85, 1, 1.2].map(v => `<option value="${v}" ${v === prefs.speed ? 'selected' : ''}>${v}×</option>`).join('')}</select></label>`;
   function bindSpeed() { const s = $('#speed'); if (s) s.onchange = () => { prefs.speed = +s.value; audio.playbackRate = prefs.speed; save(); }; }
 
   function home() {
-    document.title = 'Mandarin Study · Lessons 1–7';
+    document.title = 'Mandarin Study · Lessons 1–15';
     app.innerHTML = `<h1>Your lessons &amp; materials</h1>
       <p class="sub">Read the Chinese first. Reveal pinyin and English only when you need them. Every sentence and word has audio, and every dialogue can be played as a whole conversation.</p>
       <div class="grid">${LESSONS.map(L => {
@@ -133,9 +136,9 @@
       }).join('')}</div>
       <h2>Practice</h2>
       <div class="grid"><a class="card" href="#/speak"><div class="t-zh" style="font-size:20px">會話練習 Conversation training</div>
-      <div class="t-en">The teacher asks a question, you answer aloud, then hear a model answer — ${LESSONS.reduce((a, L) => a + (L.speak || []).reduce((b, s) => b + s.items.length, 0), 0)} questions for lessons 1–7.</div></a>
+      <div class="t-en">The teacher asks a question, you answer aloud, then hear a model answer — ${LESSONS.reduce((a, L) => a + (L.speak || []).reduce((b, s) => b + s.items.length, 0), 0)} questions for lessons 1–15.</div></a>
       <a class="card" href="#/practice"><div class="t-zh" style="font-size:20px">聽力練習 Listening &amp; flashcards</div>
-      <div class="t-en">Hear a word or sentence and pick the meaning, or drill with flashcards — across all lessons 1–7.</div></a></div>`;
+      <div class="t-en">Hear a word or sentence and pick the meaning, or drill with flashcards — across all lessons 1–15.</div></a></div>`;
     applyChrome();
   }
 
@@ -177,7 +180,7 @@
         const sp = L.speakers[ln.s], right = order.indexOf(ln.s) > 0;
         return `<li class="line ${right ? 'r' : ''}" data-i="${i}"><div class="avatar" style="background:${COLORS[ln.s % COLORS.length]}">${esc(sp.zh[0])}</div>
           <div class="bubble"><div class="spk">${esc(sp.zh)} · ${esc(sp.py)}</div><div class="bubble-row"><div>
-          <div class="zh">${esc(ln.zh)}</div><div class="py">${esc(ln.py)}</div><div class="en">${esc(ln.en)}</div></div>
+          <div class="zh">${esc(ln.zh)}</div><div class="py">${esc(ln.py)}</div><div class="en">${esc(ln.en)}</div>${subs(ln)}</div>
           <div style="display:flex;flex-direction:column;gap:6px"><button class="play" data-one="${i}" title="Play this sentence" aria-label="Play sentence ${i + 1}">▶</button>
           <button class="play" data-from="${i}" title="Play from here" aria-label="Play from sentence ${i + 1}">⏭</button></div></div></div></li>`;
       }).join('')}</ol>`;
@@ -198,9 +201,9 @@
     body.innerHTML = `<div class="toolbar"><button class="btn" id="playAll">▶ Play all words</button><button class="btn ghost" id="stop">■ Stop</button>
         ${speedSel()}<span class="sp"></span><input class="search" id="q" type="search" placeholder="Filter (Chinese, pinyin, English)"></div>
       ${visChips()}
-      <div class="vlist">${grp.items.map((it, i) => `<div class="v" data-i="${i}" data-s="${esc((it.zh + ' ' + it.py + ' ' + it.en).toLowerCase())}">
+      <div class="vlist">${grp.items.map((it, i) => `<div class="v" data-i="${i}" data-s="${esc([it.zh, it.py, it.en, it.id, it.ja].join(' ').toLowerCase())}">
         <button class="play" data-one="${i}" title="Play" aria-label="Play ${esc(it.zh)}">▶</button><div class="zh">${esc(it.zh)}</div>
-        <div class="mid"><div class="py">${esc(it.py)}<span class="pos">${esc(it.pos)}</span></div><div class="en">${esc(it.en)}</div>
+        <div class="mid"><div class="py">${esc(it.py)}<span class="pos">${esc(it.pos)}</span></div><div class="en">${esc(it.en)}</div>${subs(it)}
         <div class="wlinks">${Array.from(it.zh).filter(c => CHAR_HOME[c]).map(c => `<a href="#/lesson/${CHAR_HOME[c]}/write/${encodeURIComponent(c)}" title="Stroke order and handwriting for ${esc(c)}">✍ ${esc(c)}</a>`).join('')}</div></div></div>`).join('')}</div>`;
     bindSpeed();
     const rowSel = it => '.v[data-i="' + grp.items.indexOf(it) + '"]';
@@ -269,7 +272,7 @@
   function speakView(body, L) {
     const sets = L.speak; sets.key = L.n;
     const line = (p, cls, label) => `<div class="${cls}"><div class="bubble-row"><div style="flex:1">
-      ${label ? `<div class="spk">${label}</div>` : ''}<div class="zh">${esc(p.zh)}</div><div class="py">${esc(p.py)}</div><div class="en">${esc(p.en)}</div></div>
+      ${label ? `<div class="spk">${label}</div>` : ''}<div class="zh">${esc(p.zh)}</div><div class="py">${esc(p.py)}</div><div class="en">${esc(p.en)}</div>${subs(p)}</div>
       <button class="play" data-a="${p.a}" title="Play" aria-label="Play">▶</button></div></div>`;
     body.innerHTML = `<p class="sub">The teacher asks each question. Answer aloud in the pause, then compare with the model answer.
       The model answers are only examples — change them to describe your own life.</p>
@@ -278,7 +281,7 @@
         <label><input type="checkbox" id="model" ${prefs.model ? 'checked' : ''}> Play model answer after my turn</label>
         <span class="sp"></span><button class="btn ghost" id="stop">■ Stop</button><button class="btn" id="next" disabled>Next ›</button></div>
       <div class="toolbar" aria-label="Display options"><span style="color:var(--muted);font-size:14px">Show:</span>
-        <button class="chip" data-vis="py">Pinyin</button><button class="chip" data-vis="en">English</button><button class="chip" data-vis="ans">Model answers</button>
+        <button class="chip" data-vis="py">Pinyin</button><button class="chip" data-vis="en">English</button><button class="chip" data-vis="id">Indonesia</button><button class="chip" data-vis="ja">日本語</button><button class="chip" data-vis="ans">Model answers</button>
         <span style="color:var(--muted);font-size:13px">Hidden text is blurred — click it to reveal.</span></div>
       <div id="status" class="sub" role="status"></div>
       ${sets.map((st, si) => `<h2>${esc(st.title)}${done.has(L.n + ':s' + si) ? ' <span class="done" style="font-size:14px">✓ done</span>' : ''}</h2>
@@ -342,7 +345,7 @@
       box.innerHTML = `<div class="panel wtest">
         <div class="sub center" style="margin:0">Write the missing character from memory</div>
         <div class="q-prompt" style="font-family:var(--zh);margin:8px 0 2px" id="tw">${blank}</div>
-        <div class="center"><span class="py" style="font-size:18px">${esc(w.py)}</span> · <span style="color:var(--muted)">${esc(w.en)}</span>
+        <div class="center"><span class="py" style="font-size:18px">${esc(w.py)}</span> · <span style="color:var(--muted)">${esc(w[prefs.mlang] || w.en)}</span>
           <button class="play" id="say" aria-label="Play the word" style="display:inline-grid;vertical-align:middle;margin-left:6px">▶</button></div>
         <div class="center" style="margin-top:12px"><div id="hw2" class="hw" style="margin:0 auto"></div></div>
         <div id="tstat" class="sub center" role="status" style="margin:8px 0 0">Write the first stroke…</div>
@@ -403,7 +406,7 @@
       $('#winfo').innerHTML = `<div class="bigpy py">${esc(ch.py)}</div><div id="wstat" class="sub" role="status">Loading strokes…</div>
         <div class="spk" style="margin-top:10px">Words with ${esc(ch.c)}</div>
         ${ch.w.map(w => `<div class="wword"><button class="play" data-a="${w.a}" aria-label="Play ${esc(w.zh)}">▶</button><div><span class="zh">${esc(w.zh)}</span>
-          <span class="py"> ${esc(w.py)}</span><div class="en">${esc(w.en)}</div></div></div>`).join('')}`;
+          <span class="py"> ${esc(w.py)}</span><div class="en">${esc(w.en)}</div>${subs(w)}</div></div>`).join('')}`;
       writer = makeWriter($('#hw'), ch.c, Math.min(300, body.clientWidth - 24), m => { const s = $('#wstat'); if (s) s.textContent = m; });
       if (writer) writer.showCharacter();
     };
@@ -462,9 +465,11 @@
   function practiceView(body, n) {
     const scopeVal = n ? String(n) : 'all';
     body.innerHTML = `<div class="toolbar"><label>Mode <select id="mode">${Object.entries(MODES).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
-        <label>Material <select id="scope"><option value="${n || ''}" ${n ? 'selected' : 'hidden'}>Lesson ${n}</option><option value="all" ${n ? '' : 'selected'}>All lessons 1–7</option></select></label>
+        <label>Material <select id="scope"><option value="${n || ''}" ${n ? 'selected' : 'hidden'}>Lesson ${n}</option><option value="all" ${n ? '' : 'selected'}>All lessons 1–15</option></select></label>
+        <label>Meaning in <select id="mlang">${[['en', 'English'], ['id', 'Indonesia'], ['ja', '日本語']].map(([v, t]) => `<option value="${v}" ${v === prefs.mlang ? 'selected' : ''}>${t}</option>`).join('')}</select></label>
         ${speedSel()}<button class="btn" id="go">Start</button></div><div id="quiz"></div>`;
     bindSpeed();
+    $('#mlang').onchange = e => { prefs.mlang = e.target.value; save(); };
     $('#go').onclick = () => startQuiz($('#mode').value, $('#scope').value || 'all');
   }
 
@@ -479,10 +484,10 @@
     function ask() {
       const pool = mode === 'sentence' ? sents : words;
       cur = pool[Math.floor(Math.random() * pool.length)];
-      const field = mode === 'listen-en' ? 'en' : mode === 'sentence' ? 'en' : 'zh';
+      const field = mode === 'listen-en' || mode === 'sentence' ? prefs.mlang : 'zh';
       const others = shuffle(pool.filter(x => x[field] !== cur[field])).filter((x, i, a) => a.findIndex(y => y[field] === x[field]) === i).slice(0, 3);
       const opts = shuffle([cur].concat(others));
-      const prompt = mode === 'en-zh' ? `<div class="q-prompt small">${esc(cur.en)}</div>` : `<div class="center"><button class="btn" id="again">🔊 Play again</button></div>`;
+      const prompt = mode === 'en-zh' ? `<div class="q-prompt small">${esc(cur[prefs.mlang])}</div>` : `<div class="center"><button class="btn" id="again">🔊 Play again</button></div>`;
       quiz.innerHTML = `<div class="panel">${prompt}<div class="opts" style="margin-top:14px">${opts.map((o, i) =>
         `<button class="opt ${field === 'zh' ? 'zh' : ''}" data-i="${i}">${esc(o[field])}</button>`).join('')}</div>
         <div class="score">Score ${score} / ${total}</div><div class="center" style="margin-top:10px"><button class="btn ghost" id="next" hidden>Next →</button></div></div>`;
@@ -504,7 +509,7 @@
       quiz.innerHTML = `<div class="panel"><div class="fc" id="fc"><div><div class="zh">${esc(cur.zh)}</div><div class="sub" style="margin-top:12px">Tap to reveal</div></div></div>
         <div class="score">${deck.length} cards left</div></div>`;
       $('#fc').onclick = () => {
-        $('#fc').innerHTML = `<div><div class="zh">${esc(cur.zh)}</div><div class="py" style="font-size:20px">${esc(cur.py)}</div><div style="font-size:18px;margin-top:6px">${esc(cur.en)}</div>
+        $('#fc').innerHTML = `<div><div class="zh">${esc(cur.zh)}</div><div class="py" style="font-size:20px">${esc(cur.py)}</div><div style="font-size:18px;margin-top:6px">${esc(cur.en)}</div><div style="margin-top:4px;color:var(--muted)">${esc([cur.id, cur.ja].filter(Boolean).join(' · '))}</div>
           <div style="margin-top:16px;display:flex;gap:10px;justify-content:center"><button class="btn ghost" id="again3">↻ Again</button><button class="btn" id="got">✓ Got it</button></div></div>`;
         stopAll(); playClip(cur.a);
         $('#again3').onclick = e => { e.stopPropagation(); deck.push(deck.shift()); card(); };

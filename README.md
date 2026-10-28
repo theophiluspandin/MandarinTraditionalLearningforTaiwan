@@ -1,6 +1,6 @@
-# Mandarin Study · Lessons 1–7
+# Mandarin Study · Lessons 1–15
 
-A static study site for *A Course in Contemporary Chinese 1* (lessons 1–7): dialogues, vocabulary,
+A static study site for *A Course in Contemporary Chinese 1* (lessons 1–15): dialogues, vocabulary,
 listening practice and flashcards. No build step is needed to host it.
 
 ## Features
@@ -14,6 +14,9 @@ listening practice and flashcards. No build step is needed to host it.
 - **Writing (寫字)**: every new character of each lesson (278 in total) with animated stroke order and a
   handwriting pad that checks each stroke (mouse or finger), powered by [Hanzi Writer](https://hanziwriter.org)
   loaded from jsDelivr. Vocabulary rows link to each character (✍).
+- **Indonesian and Japanese subtitles** (Indonesia / 日本語 chips) for every dialogue line, word and training
+  question; quizzes can ask for the meaning in English, Indonesian or Japanese. Lessons 1–7 take them from
+  `../work/data/translations.txt`, lessons 8–15 have them as extra columns in `L8.txt … L15.txt`.
 - Chinese / pinyin / English can each be hidden (blurred) and revealed on click; "Hide all hints" in the header.
 - Listening quizzes, meaning → characters quiz, sentence-translation quiz and flashcards.
 - Dark mode; progress ("listened") is kept in your browser's localStorage.
